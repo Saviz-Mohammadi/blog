@@ -1,0 +1,43 @@
+For windows terminal:
+
+-- To run the server and view your website >> [..\bin\hugo.exe server -D]
+
+
+For Unix terminals (Bash):
+
+-- To run the server and view your website >> [../bin/hugo.exe server -D]
+-- To make a new post >> [../bin/hugo.exe new "./content/posts/C++/C++ Variables.md"]
+
+
+General guidelines:
+
+@ Spacing in markdown:
+
+-- Type nbsp to add a single space.
+-- Type ensp to add 2 spaces.
+-- Type emsp to add 4 spaces.
+
+-- You can use non-breaking space (nbsp) 4 times to insert a tab.
+   Please append & in the beginning and ; in the end of the above suggested space syntax
+
+@ Bold
+
+-- To make bold in markup, do this: **text**
+-- In HTML do this: <b>text</b>
+
+@ Highlight
+
+-- To make highlight in markup, do this: `text`
+-- In HTML do this: <code>text</code> (I know, it is wierd. Seems like making code highilights it, see if you can see why)
+
+@ How to specify syntax higlighting on code blocks
+
+-- Write the name of the language after ``` >> ```C++
+
+@ How to enable and disbale lines on the side of code snipites
+
+-- Write this on the exact line after ```C++ >> ```C++ {linenos=false}
+
+@ Bullet list
+
+-- You can make a bulleted list by using one of the following symbols for each bullet >> - option | * option
