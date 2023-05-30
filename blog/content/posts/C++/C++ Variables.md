@@ -4,16 +4,152 @@ date: 2023-05-12T14:06:22-07:00
 draft: true
 ---
 
+<style>
+
+  .line-divider-top {
+	
+	display: flex;
+	align-items: center;
+	text-align: center;
+	
+	margin: 0px 0px 2.5rem 0px;
+  }
+
+  .line-divider-top .left-div {
+  
+	flex-grow: 1;
+	background: currentColor;
+	height: 1px;
+  }
+  
+  .line-divider-top .right-div {
+  
+	flex-grow: 1;
+	background: currentColor;
+	height: 1px;
+  }
+
+  .line-divider-top .middle {
+  
+	margin: 0px 0px;
+  }
+  
+  
+  
+  
+  .line-divider-bottom:not(:last-child) {
+	
+    display: flex;
+    align-items: center;
+    text-align: center;
+	
+	margin: 2.5rem 0 15rem 0;
+  }
+  
+  .line-divider-bottom:last-child {
+	
+    display: flex;
+    align-items: center;
+    text-align: center;
+	
+	margin: 2.5rem 0 0 0;
+  }
+
+  .line-divider-bottom .left-div {
+  
+	flex-grow: 1;
+	background: currentColor;
+    height: 1px;
+  }
+  
+  .line-divider-bottom .right-div {
+  
+	flex-grow: 1;
+	background: currentColor;
+    height: 1px;
+  }
+
+  .line-divider-bottom .middle {
+  
+	margin: 0px 20px;
+  }
+  
+  
+  p {
+  
+	text-indent: 3rem;
+	text-align: justify;
+  }
+  
+  ins {
+  
+	font-weight: 500;text-underline-offset: 5px;
+  }
+  
+  strong {
+	
+	font-weight: 700;
+  }
+  
+  
+  
+  .justified-list {
+    list-style-type: disc;
+  }
+
+  .justified-list li {
+    text-align: justify;
+  }
+
+  .justified-list li::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+  
+  
+  .justified-ordered-list {
+    list-style-type: decimal;
+  }
+
+  .justified-ordered-list li {
+    text-align: justify;
+  }
+
+  .justified-ordered-list li::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+
+</style>
+
 <br>
 <br>
 
 ### Intro
 
+<!-- ##################### Separator - Top ##################### -->
+
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
+</div>
+
+<!-- ##################### Separator - Top ##################### -->
+
+<p>
+One of the most important abilities of a computer is its capability to manipulate and work with data or information. Data is utilized in every operation or process performed by a computer. In order for a computer to use data, it needs to store it in a location called RAM (Random Access Memory).
+</p>
+
 <br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;One of the most important abilities of a computer is its capability to manipulate and work with data or information. Data is utilized in every operation or process performed by a computer. In order for a computer to use data, it needs to store it in a location called RAM (Random Access Memory). RAM is a volatile form of memory that loses its contents when the computer shuts down or restarts. Data cannot persist on RAM, but it can be transferred and manipulated faster than other types of storage units. This unique capability is what makes RAM so important, as programs often need to process enormous amounts of data quickly. Furthermore, It is organized as a contiguous block consisting of multiple memory cells, each capable of storing and referencing a piece of data (In this case refered to as a word). To allow other processes and programs to access and manipulate these cells of data, each cell is assigned a unique address that can be used for referencing. These addresses typically appear in a format similar to the following:
-</div>
+<p>
+RAM is a volatile form of memory that loses its contents when the computer shuts down or restarts. Data cannot persist on RAM, but it can be transferred and manipulated faster than other types of storage units. This unique capability is what makes RAM so important, as programs often need to process enormous amounts of data quickly. Furthermore, It is organized as a contiguous block consisting of multiple memory cells, each capable of storing and referencing a piece of data (In this case refered to as a word). To allow other processes and programs to access and manipulate these cells of data, each cell is assigned a unique address that can be used for referencing. These addresses typically appear in a format similar to the following:
+</p>
 
 <br>
 
@@ -23,26 +159,45 @@ Typical format of an address: 0x7fff5fbff6c8
 
 <br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;If a programmer needs to modify the contents of a specific cell in RAM, referring to the address can indeed be challenging, especially when dealing with a large magnitude of data. It would be troublesome for the programmer to memorize a significant number of complex addresses in order to reference each piece of data individually. The human brain is not naturally designed for remembering and managing such detailed information. To address this challenge, more convenient ways have been developed for accessing and manipulating data.
+<p>
+If a programmer needs to modify the contents of a specific cell in RAM, referring to the address can indeed be challenging, especially when dealing with a large magnitude of data. It would be troublesome for the programmer to memorize a significant number of complex addresses in order to reference each piece of data individually. The human brain is not naturally designed for remembering and managing such detailed information. To address this challenge, more convenient ways have been developed for accessing and manipulating data.
+</p>
+
+<!-- ##################### Separator - Bottom ##################### -->
+
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Intro</span>
+  <span>|</span>
+  <div class="right-div"></div>
 </div>
 
-<br>
-<br>
+<!-- ##################### Separator - Bottom ##################### -->
 
 ### Variables
 
-<br>
+<!-- ##################### Separator - Top ##################### -->
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;<ins style="font-weight: 700;text-underline-offset: 5px;">A variable serves as a mechanism for programmers to store, manipulate, and reference data in computer memory.</ins> Variables play a crucial role as they enable us to interact with data in a convenient and straightforward manner. Variables accomplish this by assigning meaningful names and labels to the memory locations where the data is stored. The beauty of variables lies in their flexibility; their content can be modified and changed, hence the term "variable". Instead of directly dealing with memory addresses, which can be complex and cumbersome, variables provide a more intuitive and human-readable way of referencing and manipulating data.
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
 </div>
 
+<!-- ##################### Separator - Top ##################### -->
+
+<p>
+<ins>A variable serves as a mechanism for programmers to store, manipulate, and reference data in computer memory.</ins> Variables play a crucial role as they enable us to interact with data in a convenient and straightforward manner. Variables accomplish this by assigning meaningful names and labels to the memory locations where the data is stored. The beauty of variables lies in their flexibility; their content can be modified and changed, hence the term "variable". Instead of directly dealing with memory addresses, which can be complex and cumbersome, variables provide a more intuitive and human-readable way of referencing and manipulating data.
+</p>
+
 <br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;An illustrative example of utilizing variables for storing and referencing data is the representation of a player character in a game. In this scenario, a player typically has X, Y, and Z coordinates, which indicate their position within the game world. Let's consider an example showcasing how these values can be stored and accessed using the C++ programming language:
-</div>
+<p>
+An illustrative example of utilizing variables for storing and referencing data is the representation of a player character in a game. In this scenario, a player typically has X, Y, and Z coordinates, which indicate their position within the game world. Let's consider an example showcasing how these values can be stored and accessed using the C++ programming language:
+</p>
 
 <br>
 
@@ -83,31 +238,52 @@ The address of z variable is: 0x7fff5fbff6c4
 
 <br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;In C++, the ampersand (&) symbol is used to obtain the address of a variable. By using the address-of operator, we can retrieve the memory location where a variable is stored. The ability to acquire the address of a variable is valuable for debugging and memory analysis purposes. By inspecting memory addresses, programmers can track the location and value of variables during program execution
+<p>
+In C++, the ampersand (&) symbol is used to obtain the address of a variable. By using the address-of operator, we can retrieve the memory location where a variable is stored. The ability to acquire the address of a variable is valuable for debugging and memory analysis purposes. By inspecting memory addresses, programmers can track the location and value of variables during program execution
+</p>
+
+<!-- ##################### Separator - Bottom ##################### -->
+
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Variables</span>
+  <span>|</span>
+  <div class="right-div"></div>
 </div>
 
-<br>
-<br>
+<!-- ##################### Separator - Bottom ##################### -->
 
 ### Declaration & Initialization
 
-<br>
+<!-- ##################### Separator - Top ##################### -->
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;Now that we have acquired a basic understanding of variables, let's discuss the different stages involved in creating and working with them. The process of creating and utilizing a variable can be divided into two general steps:
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
 </div>
 
+<!-- ##################### Separator - Top ##################### -->
+
+<p>
+Now that we have acquired a basic understanding of variables, let's discuss the different stages involved in creating and working with them. The process of creating and utilizing a variable can be divided into two general steps:
+</p>
+
 <br>
 
-- Declaration
-- Initialization
+<ul>
+<li><strong>Declaration</strong></li>
+<li><strong>Initialization</strong></li>
+</ul>
 
 <br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;In programming, it is important to understand that declaration and initialization are two distinct concepts with different meanings and purposes. While these terms are sometimes used interchangeably, it is essential to recognize and comprehend their differences to ensure accurate communication and understanding within the programming community.
-</div>
+<p>
+In programming, it is important to understand that declaration and initialization are two distinct concepts with different meanings and purposes. While these terms are sometimes used interchangeably, it is essential to recognize and comprehend their differences to ensure accurate communication and understanding within the programming community.
+</p>
 
 <br>
 <br>
