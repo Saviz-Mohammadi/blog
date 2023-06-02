@@ -43,7 +43,7 @@ draft: true
     align-items: center;
     text-align: center;
 	
-	margin: 2.5rem 0 15rem 0;
+	margin: 2.5rem 0 20rem 0;
   }
   
   .line-divider-bottom:last-child {
@@ -134,6 +134,9 @@ I firmly believe that in order to understand the purpose of something, we must c
 </p>
 
 <br>
+<br>
+<br>
+<br>
 
 <p>
 In game development, it is occasionally necessary to print out the information of a player character or any other object for clarification and debugging purposes. This allows us to confirm whether the actual position of that entity, as perceived from a matrix perspective, aligns with its representation in the code. This method is employed to verify if the logic and code of a game engine responsible for visually rendering entities are functioning correctly. Although we won't delve deeply into the inner workings of how engines calculate and perform their tasks, since this is ultimately a simple blog explaining the purpose of functions, we will still attempt to replicate the portion related to printing information. The following is an example showcasing a code snippet aimed at printing information about the position of an imaginary player character in a game engine:
@@ -141,77 +144,123 @@ In game development, it is occasionally necessary to print out the information o
 
 <br>
 
-```C++ {linenos=false}
-// Write some code about printing the position of a player.
+```C++
+#include <iostream>
+
+int main(int argc, char* argv[])
+{
+	// ...
+	// ...
+	// ...
+	// Engine is setup and providing data.
+	
+	float position_x = 0.0;
+    float position_y = 1.0;
+    float position_z = 0.0;
+	
+	std::cout << "\n\n" << "System has completed setup: " << "\n\n";
+
+
+    std::cout << "The x coordinate is: " << position_x << "\n";
+	std::cout << "The y coordinate is: " << position_y << "\n";
+	std::cout << "The z coordinate is: " << position_z << "\n";
+	
+	// ...
+	// ...
+	// ...
+	// The player is moved using input system.
+	
+	std::cout << "\n\n" << "Player was moved with input system: " << "\n\n";
+	
+	
+	std::cout << "The x coordinate is: " << position_x << "\n";
+	std::cout << "The y coordinate is: " << position_y << "\n";
+	std::cout << "The z coordinate is: " << position_z << "\n";
+	
+	// ...
+	// ...
+	// ...
+	// The player is being impacted by physical objects and is being pushed.
+	
+	std::cout << "\n\n" << "The player was impcated by physics: " << "\n\n";
+	
+	
+	std::cout << "The x coordinate is: " << position_x << "\n";
+	std::cout << "The y coordinate is: " << position_y << "\n";
+	std::cout << "The z coordinate is: " << position_z << "\n";
+
+    return (0);
+}
+
 ```
 
 <br>
 
 <p>
-Although the current code may appear relatively easy to comprehend, it harbors several hidden issues that need to be addressed. Let's analyze each of these problems in detail and discuss potential solutions:
+Please keep in mind that the following explanation is a simplified version of the actual process, as we currently lack the necessary knowledge to write hundreds of lines of code with the precise logic. Although the current code may appear relatively easy to comprehend, it harbors several hidden issues that need to be addressed. Let's analyze each of these problems in detail and discuss potential solutions:
 </p>
 
+<br>
+<br>
+<br>
 <br>
 
 <ul class="justified-list">
 
 <!-- ##################### List element ##################### -->
-
 <li><strong>Difficulty of adapting to changes</strong></li>
+
+</ul>
 
 <p>
 Suppose we decided to modify any aspect of the code, such as changing the output format. In that case, we must ensure that all instances are updated accordingly, which can be a tedious and error-prone process. This challenge becomes even more significant if we have numerous sections and hundreds of changes to apply.
 </p>
 
-<!-- ##################### List element ##################### -->
-
-
 <br>
 <br>
 
+<ul class="justified-list">
 
 <!-- ##################### List element ##################### -->
-
 <li><strong>Code readability</strong></li>
+
+</ul>
 
 <p>
 While we may currently be able to make sense of the functionality, what about one week, two weeks, or three weeks later? Will we still remember the purpose of each part and be able to navigate through all the duplicates? Will it be easy to try and understand the hundreds if not tousands of lines of code that look very similar to each other?
 </p>
 
-<!-- ##################### List element ##################### -->
-
-
 <br>
 <br>
 
+<ul class="justified-list">
 
 <!-- ##################### List element ##################### -->
-
 <li><strong>Difficulty in handling bugs and issues</strong></li>
+
+</ul>
 
 <p>
 What happens if we attempt to fix an issue that we encountered in our code? Identifying the specific section causing the problem becomes challenging, and fixing it becomes a taxing task as we need to address the issue in every instance.
 </p>
 
-<!-- ##################### List element ##################### -->
-
-
 <br>
 <br>
 
+<ul class="justified-list">
 
 <!-- ##################### List element ##################### -->
-
 <li><strong>Bad abstraction hinders logic</strong></li>
+
+</ul>
 
 <p>
 The program's overall reasoning becomes difficult due to the overwhelming number of code lines in front of us. This distracts us from focusing on the program's logic and abstraction, hindering our ability to effectively understand and reason about the code.
 </p>
 
-<!-- ##################### List element ##################### -->
-
-</ul>
-
+<br>
+<br>
+<br>
 <br>
 
 <p>
@@ -249,9 +298,13 @@ A function is a named segment of code that carries out a specific task or a seri
 </p>
 
 <br>
+<br>
+<br>
+<br>
+<br>
 
 <p>
-Although the syntax of a function may vary depending on the situation, we can generally demonstrate the typical structure and appearance of a function as shown below:
+Although the syntax of a function may vary depending on the situation, the overall structure typically includes a return type, a name, a parameter list enclosed in parentheses, and last but not least followed by a set of curly brackets. The following demonstrate the typical structure and appearance of a function:
 </p>
 
 <br>
@@ -259,10 +312,14 @@ Although the syntax of a function may vary depending on the situation, we can ge
 ```C++ {linenos=false}
 return_type function_name(parameter_list)
 {
-
+	// The logic of the function
 }
 ```
 
+<br>
+<br>
+<br>
+<br>
 <br>
 
 <p>
@@ -302,7 +359,7 @@ Upon initial inspection, it may require several minutes to decipher the purpose 
 <br>
 
 <p>
-If you were presented with the following code base instead of the previously mentioned one, how efficiently would you be able to deduce the functionality of the following code? (Please don't concern yourself with the technical details of the syntax. Instead, try to concentrate on the main point being conveyed.)
+If you were presented with the following code base instead of the previously mentioned one, how efficiently would you be able to deduce the functionality of the following code? Although this is a straightforward and arbitrary example, it should hopefully illustrate how functions can contribute to code flexibility and comprehensibility.
 </p>
 
 <br>
@@ -325,9 +382,13 @@ int main(int argc, char* argv[])
 ```
 
 <br>
+<br>
+<br>
+<br>
+<br>
 
 <p>
-Although this is a straightforward and arbitrary example, it should hopefully illustrate how functions can contribute to code flexibility and comprehensibility. In the subsequent sections, we will delve further into the definition of each component of the function syntax and enrich our comprehension of them.
+This was just a brief definition of funcions and their overall syntax. We have barely touched the surface of functions. In the subsequent sections, we will delve further into the definition of each component of the function syntax and enrich our comprehension of them.
 </p>
 
 <!-- ##################### Separator - Bottom ##################### -->
@@ -335,7 +396,7 @@ Although this is a straightforward and arbitrary example, it should hopefully il
 <div class="line-divider-bottom">
   <div class="left-div"></div>
   <span>|</span>
-  <span class="middle">Intro</span>
+  <span class="middle">Function definition & syntax</span>
   <span>|</span>
   <div class="right-div"></div>
 </div>
@@ -384,7 +445,7 @@ The header of a function is meant to specify the most improtant characteristics 
 
 int calculate_power(int digit, int power) // Function header
 {
-	// Function body
+
 }
 
 int main(int argc, char* argv[])
@@ -494,34 +555,119 @@ The code snippet provided features a function called "print_number" which takes 
 <br>
 <br>
 
+<ul class="justified-list">
+
+<!-- ##################### List element ##################### -->
+<li><strong>Body</strong></li>
+
+</ul>
+
 <p>
-If you have followed along until now, then you may have noticed that in nearly every instance of code snipet examples until now the functions that were created are place in some location before the location we intend to call or invoke them. This is not a accident. The reason for this is that C++ compiles the source code in a top-down manner, line by line. When the compiler encounters a function call, it needs to know the function's signature (return type, name, and parameter types) in order to verify that the function call is correct.
+In programming, the body of a function refers to the code block that outlines the actions or operations to be executed by the function. It is the segment of the function where you specify the desired behavior and define the tasks to be performed when the function is called. The function body serves as a regular container capable of holding various types of statements we have encountered thus far. This consists of a broad spectrum of statements, including variables, assignments, and any other valid C++ code. Here's a general syntax of a function with a body in C++:
+</p>
 
-By placing function declarations or definitions before the points where they are called, you provide the necessary information to the compiler about the functions' signatures. This allows the compiler to verify the correctness of the function calls during the compilation process.
+<br>
 
-If a function is called before it is declared or defined, the compiler will generate an error because it doesn't have the required information to verify the call. Placing the function definition before its usage ensures that the compiler has the necessary details to correctly compile the code. this brings us to yet another important ability of headers. As we discussed earlier, headers contain the essential information that a compiler needs in order to compare the correctness of our calls. Since headers contain all the neccessary information for this correct checking, they are the only thing that the complire requires in order to actually make a call statemnt work temporarily (beside from the actual functionality of the function of course). This brings us to prototypes.
+```C++
+int calculate_power(int digit, int power)
+{
+	// Start of the body...
+	
+	int result = 0;
+	
+	// Calculate the "result"...
+	
+	return (result);
+	
+	// End of the body...
+}
+```
+
+<br>
+
+<p>
+The body encapsulates a block of code enclosed within a set of curly braces "{ }". The statements within the body are executed sequentially, allowing you to perform calculations, manipulate data, or perform specific actions based on the desired logic. Function bodies in C++ provide a powerful mechanism for organizing code, promoting reusability, and implementing complex algorithms and operations within a program. The function body may or may not conclude with a return statement.
+</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p>
+Let's pause for a moment to explore the return statement in C++ more extensively. In C++, the return keyword is used to create a return statement and it has has two primary purposes. The first purpose is to explicitly specify a value that will be returned to the invoker of the function. It is crucial to understand that when a function is declared to return a value (i.e., it does not have a void return type), every possible execution path within the function must include a return statement that returns a value of the declared type. Failure to do so will lead to a compilation error in the code.
+</p>
+
+<br>
+
+```C++
+int calculate_power(int base, int exponent)
+{	
+	int result = 0;
+	
+	if (base < 0)
+	{
+		// -1 indicates that an error has occurred!
+		// The invoker must handle the situation.
+		return (-1);
+    }
+	
+	else if (exponent == 0)
+	{
+        return (1);
+    }
+	
+	// Calculate the "result"...
+	
+	return (result);
+}
+```
+
+<br>
+
+<p>
+In the given example, we begin by checking if the base is less than zero, which is ambiguous and requires proper clarification through error handling. Next, we establish a condition to verify if the exponent is zero, resulting in a value of one. If none of these situations apply, we proceed with the calculation and return the result. Each condition introduces a new exit point, necessitating the inclusion of a return value with the proper declared type to be returned from it.
 </p>
 
 <br>
 
 <p>
-headers (prototypes)that provide a way to use a function before its actual implementation. Prototypes allow functions to be declared and referenced in any order, facilitating modular programming and reducing dependencies between code modules. Prototypes are usually ended with a semicolon as their whole porpuse is to just inform the complier of the existance of a function. But, when used in conjunction with a body they do not end with a semicolon.
+The second purpose is acting as a termination operator for the functiont to end prematurely. When a return statement is encountered in a function, it immediately exits the function's execution and returns control to the caller. This means that any code after the return statement within the function will not be executed. The return statement can be used at any point within a function, even in conditional statements or loops, to terminate the function's execution early. The return statement can also be used to terminate a function without returning a value. In this case, you would use the void return type when declaring the function, indicating that it doesn't return any value.
 </p>
 
-```C++ {linenos=false}
-// Example of a function header as prototype
+<br>
 
-void print(std::string);
+```C++
+#include <iostream>
+
+void validate_input(int number)
+{
+    if (number > 10)
+	{
+        std::cout << "The number is greater than 10." << "\n";
+        
+		return;  // Terminate the function early if the condition is met.
+    }
+    
+	// Otherwise, continue ...
+}
 ```
 
-One of the reasnos as to why headers are also called signatures is because just like signing an agreement a function promisses to uphold to what it promisses to recieve and return in this being the header.
+<br>
 
 <p>
-Another reason why headers are important is because Function headers provide type information for the compiler or interpreter to perform static type checking. With the return type and parameter types explicitly defined in the header, the compiler can verify if the function is used correctly, such as checking for type mismatches or missing arguments. This early validation helps catch errors before runtime and ensures program stability.
+In the given example, the function initially verifies whether the number exceeds 10, as this can potentially create problems for the operation. If this condition is satisfied, the function promptly returns, leading to its termination. Otherwise, it proceeds with the execution. If you're interested in learning more about such condition checking techniques, I recommend exploring the guard-clause method discussed in the conditional part of this tutorial.
 </p>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <p>
-The function body, also known as the function definition or implementation, is the block of code that contains the actual instructions and statements executed when the function is called. It is the part of the function that specifies what the function does. Function bodies provide the implementation details and logic that define what a function does when it is called.
+Wow! that was a lot to take in. But, if you think it is doen then think again! We will continue to discuss more things as we go along. Lets delve into the next topics.
 </p>
 
 <!-- ##################### Separator - Bottom ##################### -->
@@ -529,7 +675,7 @@ The function body, also known as the function definition or implementation, is t
 <div class="line-divider-bottom">
   <div class="left-div"></div>
   <span>|</span>
-  <span class="middle">Intro</span>
+  <span class="middle">Function Header & Body</span>
   <span>|</span>
   <div class="right-div"></div>
 </div>
@@ -551,31 +697,91 @@ The function body, also known as the function definition or implementation, is t
 <!-- ##################### Separator - Top ##################### -->
 
 <p>
-The format of a typical function in C++ shares a similarity with variables, although there are notable differences. The process of creating a function can be divided into two essential steps:
+The format of a typical function in C++ shares a similarity with variables, although there are notable differences. The process of creating a function can be divided into two essential steps of <strong>Declaration</strong> and <strong>Definition</strong>. The source of confusion for many programmers is that other resources often present these steps as a single simultaneous operation, making it challenging to perceive them as distinct actions. While these terms are frequently used interchangeably, it is important to understand their distinctions.
 </p>
 
 <br>
-
-<p>
-<strong>Declaration</strong> and <strong>Definition</strong>
-</p>
-
 <br>
-
-<p>
-The source of confusion for many programmers is that other resources often present these steps as a single simultaneous operation, making it challenging to perceive them as distinct actions. Therefore, it becomes nearly impossible to recognize that declaration and definition are in reality two separate operations. While these terms are frequently used interchangeably, it is important to understand their distinctions and the implications they carry.
-</p>
-
+<br>
+<br>
 <br>
 
 <ul class="justified-list">
 
 <!-- ##################### List element ##################### -->
-
 <li><strong>Declaration</strong></li>
 
+</ul>
+
 <p>
-It acts as a blueprint for the function, providing information about how the function should be called and what it returns. Function declaration is important because it gives teh complire a general idea towards what the function does (in terms of what arguments it takes and what it returns) in one very short and decriptive line without the need to get into the details of what the functions does percisely in its body.
+One of the primary justifications for the existence of functions, as I mentioned earlier, lies in their ability to be reused. However, if you cannot even communicate their existence to others, how can you expect functions to be effectively reused? This is where function declaration comes into play. In C++, a function declaration serves the purpose of informing the compiler about a function's existence prior to its definition or usage.
 </p>
 
+<br>
+
+<p>
+If you have been following along, you might have observed a recurring pattern in the code snippets provided so far. In almost every case, the functions created are positioned before the point where they are intended to be called or invoked. This is not a coincidence. The reason behind this approach is that C++ compiles source code in a top-down fashion, processing it line by line. When the compiler encounters a function call, it requires prior knowledge of the function's signature, including its return type, name, and parameter types, to ensure the correctness of the function call.
+</p>
+
+<br>
+
+<p>
+If a function is called before it is declared or defined, the compiler will generate an error because it doesn't have the required information to verify the call. Placing the function definition before its usage ensures that the compiler has the necessary details to correctly compile the code. this brings us to yet another important ability of headers. As we discussed earlier, headers contain the essential information that a compiler needs in order to compare the correctness of our calls. Since headers contain all the neccessary information for this correct checking, they are the only thing that the complire requires in order to actually make a call statemnt work temporarily (beside from the actual functionality of the function of course). This brings us to prototypes.
+</p>
+
+<br>
+
+<p>
+Declarations work hand in hand with function headers, in this case also called <strong>prototypes</strong>. It holds significant importance as it provides the compiler with a concise and descriptive summary of the function's functionality, including the arguments it accepts and the output it produces. Consequently, it enables others to comprehend the function's purpose without delving into the complex details of its implementation.
+</p>
+
+<br>
+
+```C++
+#include <iostream>
+
+void print_number(int number); // Function prototype is declared before usage.
+
+
+int main(int argc, char* argv[])
+{
+    print_number(42);
+
+    return (0);
+}
+
+
+void print_number(int number)
+{
+    std::cout << "The number is: " << number << std::endl;
+}
+```
+
+<br>
+
+<p>
+In the example provided above, we employ a function header, also known as a prototype, to indicate the existence of a function called "print_number." Prototypes offer the advantage of declaring and referencing functions in any order, promoting modular programming and minimizing interdependencies among code modules. Prototypes typically conclude with a semicolon (;) since their sole purpose is to inform the compiler about the presence of a function. However, when used in conjunction with a function body, they do not require a semicolon at the end. This distinction ensures proper syntax and avoids any confusion in the code.
+</p>
+
+<br>
+
+<p>
+Function headers, or prototypes, are often referred to as signatures due to a parallel with signing an agreement. Similar to how a signature ensures commitment to fulfilling certain obligations, a function's prototype specifies what it expects to receive and return. Function declarations become necessary when you intend to use a function before its definition. They inform the compiler about the function's signature, encompassing the return type and parameters. This enables the compiler to perform accurate type checking and compilation. It is considered good practice to provide declarations for all functions, even if they are defined prior to their usage. Doing so enhances code readability and maintainability, allowing other programmers to understand the function's signature without having to search for its definition.
+</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<ul class="justified-list">
+
+<!-- ##################### List element ##################### -->
+<li><strong>Definition</strong></li>
+
 </ul>
+
+<p>
+The function body serves as the container for the specific instructions and statements that are executed when the function is called. This block of code defines the actual behavior of the function and is commonly referred to as the function definition. In essence, the function definition outlines how the function operates and what actions it performs. This process is also known as the function implementation, as it involves the concrete realization of the function's intended behavior.
+</p>
