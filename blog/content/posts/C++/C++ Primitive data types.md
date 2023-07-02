@@ -71,6 +71,33 @@ draft: true
 &emsp;&emsp;&emsp;&emsp;Each of these primitive types apply a certain meannig to our data by not only hinting at their potential usage, but also by defining their capability in terms of the size of data that they can store and the set of operations they can perofrm upon that data. As an example let's take a look at the following code:
 </div>
 
+<div>
+Why types are made shorter like "int" instead of "integer":
+
+
+The use of the term "int" in C++ instead of its full version "integer" can indeed be attributed to historical reasons. The C++ programming language evolved from its predecessor, the C programming language, which was developed in the early 1970s.
+
+C was designed to be a low-level language with a strong focus on efficiency and performance. In those early days of computing, memory and storage were limited resources, and every byte mattered. As a result, the designers of C made certain design choices to optimize for efficiency.
+
+One such choice was to introduce a set of basic data types with short, concise names. These types were implemented in a way that closely matched the hardware capabilities of the underlying computer systems. The goal was to provide a minimal set of types that could efficiently represent the most common data used by programs.
+
+The term "int" stands for "integer" and is used to represent whole numbers in C and C++. The decision to use a short, abbreviated form like "int" instead of the full word "integer" was likely made to save space and reduce the amount of typing required. It was a trade-off between brevity and expressiveness.
+
+Over time, as C++ evolved, it maintained compatibility with C and inherited many of its design decisions, including the use of abbreviated type names. This compatibility allowed C++ to leverage the existing C codebase and benefit from its large ecosystem of libraries and tools.
+
+Therefore, the use of "int" as the type name in C++ can be seen as a historical artifact that reflects the language's roots in C and its focus on efficiency and compatibility.
+</div>
+
+<div>
+Historically, a computer processor can process integer arithmetic quicker than 
+it can floating-point arithmetic. Thus, while a processor can add 1 million integer numbers in a given amount of time, the same processor may be able to 
+perform only 200,000 floating-point calculations during the same period. (Not 
+surprisingly, I couldn’t even get around to reading the first value.) 
+Calculation speed is becoming less of a problem as microprocessors increase 
+their capabilities. Most modern processors contain special calculation circuitry for performing floating-point calculations almost as fast as integer 
+calculations.
+</div>
+
 <br>
 
 ```C++

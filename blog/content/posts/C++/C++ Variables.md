@@ -124,10 +124,16 @@ draft: true
 
 </style>
 
+
+
 <br>
 <br>
 
+
+
 ### Intro
+
+
 
 <!-- ##################### Separator - Top ##################### -->
 
@@ -141,27 +147,43 @@ draft: true
 
 <!-- ##################### Separator - Top ##################### -->
 
+
+
 <p>
-One of the most important abilities of a computer is its capability to manipulate and work with data or information. Data is utilized in every operation or process performed by a computer. In order for a computer to use data, it needs to store it in a location called RAM (Random Access Memory).
+One of the most crucial capabilities of a computer lies in its potential to manipulate and process information, also known as data. Data plays a vital role in all computer operations and processes. However, in order for a computer to work with data, it requires a designated location to store that information. While disks can store large amounts of data, they suffer from sluggish read and write speeds, leading to significant delays. To fully utilize the potential of data, computers depend on a storage location called RAM (Random Access Memory).
 </p>
+
+
 
 <br>
 
+
+
 <p>
-RAM is a volatile form of memory that loses its contents when the computer shuts down or restarts. Data cannot persist on RAM, but it can be transferred and manipulated faster than other types of storage units. This unique capability is what makes RAM so important, as programs often need to process enormous amounts of data quickly. Furthermore, It is organized as a contiguous block consisting of multiple memory cells, each capable of storing and referencing a piece of data (In this case refered to as a word). To allow other processes and programs to access and manipulate these cells of data, each cell is assigned a unique address that can be used for referencing. These addresses typically appear in a format similar to the following:
+RAM is a volatile form of memory that loses its contents when the computer shuts down or restarts. Data cannot persist on RAM, but it can be transferred and manipulated faster than other types of storage units. This unique capability is what makes RAM so important, as programs often need to process enormous amounts of data quickly. RAM is organized as a contiguous block consisting of multiple memory cells, each capable of storing and referencing a piece of data, sometimes also refered to as a word. To allow other processes and programs to access and manipulate these cells of data, each cell is assigned a unique address that can be used for referencing. These addresses typically appear in a format called "hexidecimal" similar to the following:
 </p>
 
+
+
 <br>
+
+
 
 ```C++ {linenos=false}
-Typical format of an address: 0x7fff5fbff6c8
+Address: 0x7fff5fbff6c8
 ```
 
+
+
 <br>
+
+
 
 <p>
 If a programmer needs to modify the contents of a specific cell in RAM, referring to the address can indeed be challenging, especially when dealing with a large magnitude of data. It would be troublesome for the programmer to memorize a significant number of complex addresses in order to reference each piece of data individually. The human brain is not naturally designed for remembering and managing such detailed information. To address this challenge, more convenient ways have been developed for accessing and manipulating data.
 </p>
+
+
 
 <!-- ##################### Separator - Bottom ##################### -->
 
@@ -173,9 +195,22 @@ If a programmer needs to modify the contents of a specific cell in RAM, referrin
   <div class="right-div"></div>
 </div>
 
+
+
 <!-- ##################### Separator - Bottom ##################### -->
 
+
+
+
+
+
+
+
+
+
 ### Variables
+
+
 
 <!-- ##################### Separator - Top ##################### -->
 
@@ -189,27 +224,38 @@ If a programmer needs to modify the contents of a specific cell in RAM, referrin
 
 <!-- ##################### Separator - Top ##################### -->
 
+
+
 <p>
-<ins>A variable serves as a mechanism for programmers to store, manipulate, and reference data in computer memory.</ins> Variables play a crucial role as they enable us to interact with data in a convenient and straightforward manner. Variables accomplish this by assigning meaningful names and labels to the memory locations where the data is stored. The beauty of variables lies in their flexibility; their content can be modified and changed, hence the term "variable". Instead of directly dealing with memory addresses, which can be complex and cumbersome, variables provide a more intuitive and human-readable way of referencing and manipulating data.
+A variable serves as a mechanism for programmers to store, manipulate, and reference data from memory. Variables play a crucial role as they enable us to interact with data in a convenient and straightforward manner. They accomplish this by assigning meaningful names and labels to the memory locations where the data is stored. Instead of directly dealing with memory addresses, which can be complex and cumbersome, variables provide a more intuitive and human-readable way of interacting with memory.
 </p>
+
+
 
 <br>
 
+
+
 <p>
-An illustrative example of utilizing variables for storing and referencing data is the representation of a player character in a game. In this scenario, a player typically has X, Y, and Z coordinates, which indicate their position within the game world. Let's consider an example showcasing how these values can be stored and accessed using the C++ programming language:
+Variables possess a unique quality: they are very flexibil; their content can be modified and changed, hence the adoption of the term "variable" from the realm of mathematics. An illustrative example of utilizing variables for storing and referencing data is the representation of a player character in a game. In this scenario, a player typically has X, Y, and Z coordinates, which indicate their position within the game world. Let's consider an example showcasing how these values can be stored and accessed using the C++ programming language:
 </p>
 
+
+
 <br>
+
+
 
 ```C++
 main(int argc, char* argv[])
 {
-	// Declaration & Initialization.
+	// Creating variables.
 	int coordinate_x = 100;
 	int coordinate_y = 0;
 	int coordinate_z = 50;
 	
-	// Outputing the content & address.
+	
+	// Printing coordinates.
 	std::cout << "The content of x variable is: " << coordinate_x << "\n";
 	std::cout << "The address of x variable is: " << &coordinate_x << "\n\n";
 	
@@ -219,11 +265,16 @@ main(int argc, char* argv[])
 	std::cout << "The content of z variable is: " << coordinate_z << "\n";
 	std::cout << "The address of z variable is: " << &coordinate_z << std::endl;
 	
+	
 	return (0);
 }
 ```
 
+
+
 <br>
+
+
 
 ```C++ {linenos=false}
 The content of x variable is: 100
@@ -236,11 +287,37 @@ The content of z variable is: 50
 The address of z variable is: 0x7fff5fbff6c4
 ```
 
+
+
 <br>
 
+
+
 <p>
-In C++, the ampersand (&) symbol is used to obtain the address of a variable. By using the address-of operator, we can retrieve the memory location where a variable is stored. The ability to acquire the address of a variable is valuable for debugging and memory analysis purposes. By inspecting memory addresses, programmers can track the location and value of variables during program execution
+When examining the addresses of variables, you might wonder if there is a noticeable pattern that can be utilized to predict their storage locations. However, in general, it is not feasible to accurately predict the precise address where a variable will be stored by the compiler. The compiler's allocation process for addresses is influenced by multiple factors, such as the target platform, compiler optimizations, memory alignment requirements, and other considerations. 
 </p>
+
+
+
+<br>
+
+
+
+<p>
+The specific memory layout and address assignments are implementation details that are typically not exposed or predictable solely from the source code. The primary objective of the compiler is to generate efficient and correct machine code, granting it the flexibility to determine how to allocate and organize variables in memory. Attempting to predict the address of a variable is generally unnecessary and contradicts the principles of creating portable and maintainable code.
+</p>
+
+
+
+<br>
+
+
+
+<p>
+Fortunately, even if we cannot predict the address of a variable, in C++, we can still obtain it by using the ampersand (&) symbol. The address-of operator allows us to retrieve the memory location where a variable is stored. This ability to acquire the address of a variable is valuable for purposes such as debugging and memory analysis. By inspecting memory addresses, programmers can track the location and value of variables during program execution.
+</p>
+
+
 
 <!-- ##################### Separator - Bottom ##################### -->
 
@@ -252,9 +329,22 @@ In C++, the ampersand (&) symbol is used to obtain the address of a variable. By
   <div class="right-div"></div>
 </div>
 
+
+
 <!-- ##################### Separator - Bottom ##################### -->
 
+
+
+
+
+
+
+
+
+
 ### Declaration & Initialization
+
+
 
 <!-- ##################### Separator - Top ##################### -->
 
@@ -268,92 +358,164 @@ In C++, the ampersand (&) symbol is used to obtain the address of a variable. By
 
 <!-- ##################### Separator - Top ##################### -->
 
-<p>
-Now that we have acquired a basic understanding of variables, let's discuss the different stages involved in creating and working with them. The process of creating and utilizing a variable can be divided into two general steps:
-</p>
 
-<br>
-
-<ul>
-<li><strong>Declaration</strong></li>
-<li><strong>Initialization</strong></li>
-</ul>
-
-<br>
 
 <p>
-In programming, it is important to understand that declaration and initialization are two distinct concepts with different meanings and purposes. While these terms are sometimes used interchangeably, it is essential to recognize and comprehend their differences to ensure accurate communication and understanding within the programming community.
+Now that we have acquired a basic understanding of variables, let's discuss the different stages involved in creating and working with them. The process of creating and utilizing a variable can be divided into two general steps of <strong>Declaration</strong> and <strong>Initialization</strong>. In programming, it is important to understand that declaration and initialization are two distinct concepts with different meanings and purposes. While these terms are sometimes used interchangeably, it is essential to recognize and comprehend their differences to ensure accurate communication and understanding within the programming community.
 </p>
 
+
+
+<br>
 <br>
 <br>
 
-###### What is Declaration?
+
+
+##### What is Declaration?
+
+
 
 <br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;<ins style="font-weight: 700;text-underline-offset: 5px;">Declaration is a fundamental process in programming where we, as programmers, inform the compiler about the existence and characteristics of a variable.</ins> When we declare a variable, we are instructing the compiler to allocate memory for that variable according to its data type. The name we provide serves as a unique identifier for accessing and manipulating the variable throughout the program. At a fundemental level, declaration is the only requirement to create and interact with variables. The syntax structure for declaring variables in C++ follows this general pattern:
-</div>
+
+
+<p>
+Declaration is a fundamental process in programming whereby we, as programmers, inform the compiler about the existence and characteristics of a variable. When we declare a variable, we are essentially instructing the compiler to allocate a portion of memory for storing a specific piece of information or data that we intend to manipulate. The name we provide acts as a unique identifier for accessing and manipulating the variable throughout the program. Essentially, declaration is the only requirement for creating and interacting with variables. In C++, the syntax for declaring variables follows a general pattern:
+</p>
+
+
 
 <br>
+
+
 
 ```C++ {linenos=false}
-Syntax for Declaring variables:
-
-[Access modifier] [data_type] [identifier];
+access_modifier data_type name;
 ```
 
+
+
 <br>
+
+
 
 ```C++
 main(int argc, char* argv[])
 {
-	// The "number" variable will store whole numbers.
 	int number;
 	
 	return (0);
 }
 ```
 
-<br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;In the given example, we can observe the declaration of a variable without the use of any access modifiers. (Access modifiers will be explained in later discussions). During variable declaration, we start by specifying the data type, which informs the compiler about the type of data that will be stored in the variable. In the example, the data type specified is "int", indicating that the variable will hold whole numbers (It's important to note that different data types can hold different kinds of data, and we'll delve into more details about data types in later discussions). In addition to the data type, we assign a label or name to the variable. In this case, the identifier "number" is used to uniquely identify and refer to the variable. The chosen name should be meaningful and indicative of the purpose or content of the variable. Lastly, it's essential to end the declaration statement with a semicolon (;). The semicolon serves as a statement terminator, indicating the end of the line of code. It is a crucial syntax element in C++ and many other programming languages.
-</div>
 
 <br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;At this point, you may wonder, "What is Initialization?" Moreover, if declaration is sufficient for creating and interacting with variables, why is it essential to understand Initialization? To address these questions, let's begin by understanding what Initialization entails.
-</div>
+
+
+<p>
+In the provided example, we can observe the declaration of a variable without the use of any access modifiers, which will be explained in later discussions. During variable declaration, we begin by specifying the data type, which informs the compiler about the type of information that will be stored in the variable. In this example, the specified data type is "int," indicating that the variable will store whole numbers. It is important to note that different data types can hold different kinds of information in them, and we will explore this further in later discussions.
+</p>
+
+
+
+<br>
+
+
+
+<p>
+In addition to the data type, we assign a label or name to the variable. In this case, the identifier "number" is used to uniquely identify and refer to the variable. It is crucial to choose a meaningful name that reflects the purpose or content of the variable. Lastly, it is essential to conclude the declaration statement with a semicolon (;). The semicolon acts as a statement terminator, signifying the end of the line of code. It is a vital syntax element in C++ as well as many other programming languages.
+</p>
+
+
 
 <br>
 <br>
+<br>
 
-###### What is Initialization?
+
+
+##### What is Initialization?
+
+
 
 <br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;<ins style="font-weight: 700;text-underline-offset: 5px;">Initialization refers to the act of assigning an initial value to a variable at the time of its declaration or creation.</ins> Hence, it is called "Initialization" because it sets the variable's starting value. In programming, Initialization is commonly achieved using the equal sign (=) followed by an expression or value. For example, when we declare a variable called "number_1" and initialize it with the value 57, we are performing Initialization. In C++, Initialization can also be done on two separate lines if desired.
-</div>
+
+
+<p>
+At this stage, you might find yourself wondering, "What exactly is Initialization?" Additionally, if declaration alone is adequate for creating and working with variables, why is it crucial to comprehend Initialization? To address these inquiries, let us commence by gaining an understanding of what Initialization encompasses. Initialization refers to the act of assigning an initial value to a variable at the time of its declaration or creation. Hence, it is called "Initialization" because it sets the variable's starting value.
+</p>
+
+
 
 <br>
+
+
+
+<p>
+In programming, Initialization is typically accomplished by utilizing the equal sign (=) followed by an expression or value. For instance, when we declare a variable named "number" and assign the value 57 to it, we are engaging in Initialization. This process of allocating a value to a variable in programming using the equal sign is commonly referred to as an assignment statement. In C++, Initialization can also be done on two separate lines if desired.
+</p>
+
+
+
+<br>
+
+
 
 ```C++
 main(int argc, char* argv[])
 {
-	// The equal sign (=) can be used to initialize a variable.
-	int number_1 = 57;
-	
-	// Declaring the variable first, and initializing it on another line.
-	int number_2;
-	number_2 = 100;
+	int number = 57;	// Declaration and initializating happen at the same time.
 	
 	return (0);
 }
 ```
+
+
+
+<br>
+
+
+
+<p>
+The equal sign in programming often leads to confusion, especially for beginners, and is a common source of misunderstanding. This confusion arises from the fact that in mathematics, the equal sign (=) signifies equality, while in programming, it represents the assignment of a value to a variable. This presents a significant challenge for those transitioning from a math background to programming.
+</p>
+
+
+
+<br>
+
+
+
+<p>
+While not of utmost importance, initializing a variable in its declaration offers an additional advantage by eliminating the need for programmers to retype the variable's name when assigning a value to it using an assignment statement. This minor benefit can help streamline code and reduce the risk of typographical errors by preventing the chance of human-error when retyping.
+</p>
+
+
+
+<br>
+
+
+
+```C++
+main(int argc, char* argv[])
+{
+	int number;			// Declaration.
+	
+	number = 100;		// Initializating
+	
+	return (0);
+}
+```
+
+
+
+<br>
+
+
 
 <br>
 
