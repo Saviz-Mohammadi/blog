@@ -270,57 +270,59 @@ Utilizing a single data type would result in excessive memory usage, leading to 
 
 
 
-### About primitive types
+### Primitive types
 
-<br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;I am going to give a very brief explanation as to what a data type is. A primitive data type is a data type that is built into the language and is used to represent basic values. Primitive data types are also sometimes called fundamental data types or simple data types. C++ is no exception to this rule. In C++ there are many fundemental data types that can be used to create logic. Some of the primitive data types in C++ include the following:
+
+<!-- ############################################# Separator - Top ############################################# -->
+
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
 </div>
 
+<!-- ############################################# Separator - Top ############################################# -->
+
+
+
+<p>
+In programming languages, including C++, a primitive data type, also known as a built-in or fundamental type, represents a basic information type provided by the language itself. These types are commonly used to represent simple data values like numbers and characters. Primitive types are directly supported by the language implementation. They have fixed sizes and predefined behaviors, enabling efficient storage and optimized operations. Primitive types often have built-in operations for arithmetic, logical operations, and comparisons, and they are typically supported by the underlying hardware. In C++, some examples of primitive data types include the following:
+</p>
+
+
+
 <br>
+<br>
+
+
 
 | Type    | Description                                           |
 |---------|-------------------------------------------------------|
-| `int`   | Used to represent whole numbers without decimal points |
-| `float`| Used to represent decimal numbers with precision points |
-| `char`  | Used to represent a single character                   |
-| `bool`  | Used to represent a boolean value, which can be either `true` or `false` |
+| `int`   | Short for "integer". Used to represent whole numbers without decimal points. |
+| `float`| Short for "floating-point". Used to represent decimal numbers with precision points.|
+| `char`  | Short for "character". Used to represent a single character. |
+| `bool`  | Short for "boolean". Used to represent a logical value that can be either `true` or `false` |
+
+
 
 <br>
-
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;Each of these primitive types apply a certain meannig to our data by not only hinting at their potential usage, but also by defining their capability in terms of the size of data that they can store and the set of operations they can perofrm upon that data. As an example let's take a look at the following code:
-</div>
-
-<div>
-Why types are made shorter like "int" instead of "integer":
+<br>
 
 
-The use of the term "int" in C++ instead of its full version "integer" can indeed be attributed to historical reasons. The C++ programming language evolved from its predecessor, the C programming language, which was developed in the early 1970s.
 
-C was designed to be a low-level language with a strong focus on efficiency and performance. In those early days of computing, memory and storage were limited resources, and every byte mattered. As a result, the designers of C made certain design choices to optimize for efficiency.
+<p>
+Each of these primitive data types provides a specific meaning to our data. They not only suggest their potential usage but also define their capacity in terms of the size of data they can store and the set of operations they can perform on that data. These characteristics enable the compiler to accurately determine the memory requirements for each type and apply optimization techniques to enhance the efficiency of logical operations associated with that data type. To demonstrate this concept, let's examine the following code snippet and see how the data type helps us to understand the purpose of the variable in completing the functionality:
+</p>
 
-One such choice was to introduce a set of basic data types with short, concise names. These types were implemented in a way that closely matched the hardware capabilities of the underlying computer systems. The goal was to provide a minimal set of types that could efficiently represent the most common data used by programs.
 
-The term "int" stands for "integer" and is used to represent whole numbers in C and C++. The decision to use a short, abbreviated form like "int" instead of the full word "integer" was likely made to save space and reduce the amount of typing required. It was a trade-off between brevity and expressiveness.
-
-Over time, as C++ evolved, it maintained compatibility with C and inherited many of its design decisions, including the use of abbreviated type names. This compatibility allowed C++ to leverage the existing C codebase and benefit from its large ecosystem of libraries and tools.
-
-Therefore, the use of "int" as the type name in C++ can be seen as a historical artifact that reflects the language's roots in C and its focus on efficiency and compatibility.
-</div>
-
-<div>
-Historically, a computer processor can process integer arithmetic quicker than 
-it can floating-point arithmetic. Thus, while a processor can add 1 million integer numbers in a given amount of time, the same processor may be able to 
-perform only 200,000 floating-point calculations during the same period. (Not 
-surprisingly, I couldn’t even get around to reading the first value.) 
-Calculation speed is becoming less of a problem as microprocessors increase 
-their capabilities. Most modern processors contain special calculation circuitry for performing floating-point calculations almost as fast as integer 
-calculations.
-</div>
 
 <br>
+<br>
+
+
 
 ```C++
 main(int argc, char* argv[])
@@ -329,27 +331,54 @@ main(int argc, char* argv[])
 	
 	if(isConnected)
 	{
-		performFunction();
+		// ...
+		// Perform task.
+		// ...
 	}
 	
 	return (0);
 }
 ```
 
-<br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;The above code specifies that our variable is attempting to store a boolean type. This suggests to us that our variable is going to be used as a condition which will determine if some other segment of code will be executed or not depending on the value stored in it. Furthermore, the compiler can store this value in a relatively small memeory sized location as storing a true or false value does not take much effort.
-</div>
 
 <br>
+<br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;The amount of space in memory that the compiler needs to allocated to each data type is another important aspect of these primitive data types. As an example, while a `int` primitive type is meant to store whole numbers, but the smallest and largest numbers that it can hold are limited to the size it holds. A regular int in most environments (programming languages, operating systems, etc.) can usually have a size of 4 bytse or 32 bits. This allows the int to have a minimum of "-2147483648" and a maximum of "2147483647". But, what if we need store bigger values? What if we don't want to use as much space and only store smaller ranged values? The answer to these questions are the other similar data types that were created for these purposes. Each one of these major primitive data types have other sibling primitive data types that only vary in thier size capability. As an example, the int has other counter parts such as: `short` and `long`. The short has the ability to store a smaller range of numbers and uses less memeory. The long has the ability to store massive numbers at the cost of more memory usage. A similar situation exists for most other primitive data types. For a complete list of all availabl primitive data types and their sizes one must refer to the official documentation of that language and the underlying system. However, here is a list of most common types:
-</div>
+
+
+<p>
+The provided code indicates that the variable "isConnected" is intended to hold a boolean value. This implies that the variable will be utilized as a condition to determine whether a specific code segment will be executed or not based on its stored value. As a boolean type only requires a minimal amount of memory, the compiler can allocate a small memory space to store the "true" or "false" value. In this particular case, since the boolean variable holds the value "true," it signifies that the associated code segment is permitted to execute given the specified conditions.
+</p>
+
+
 
 <br>
-Change this tabel to contain the full list (also talk about signed and unsigned and explain how bits can be used to determine the size of a variable as well as sizeof method)
+<br>
+
+
+
+<code><h3>IMPORTANT NOTE:</h3></code>
+
+<P>
+There are specific reasons why types have shorter names like "int" instead of "integer." The adoption of the term "int" in C++ rather than its complete form "integer" can be attributed to historical factors. C++ originated from the C programming language, which was created in the early 1970s. C was developed with a primary emphasis on efficiency and performance. During that era of computing, memory and storage were scarce resources, and every byte counted. Therefore, the creators of C made deliberate design decisions to optimize for efficiency.
+</p>
+
+
+
+<br>
+
+
+
+<p>
+One of the design choices made in the C programming language was to introduce concise and hardware-compatible basic data types. These types were specifically implemented to closely align with the capabilities of the underlying hardware. The objective was to provide a minimal set of types that efficiently represented the most commonly used data in programs. By opting for abbreviated forms like "int" instead of the full word "integer," the intention was to save space and reduce the amount of typing required. This decision required striking a balance between brevity and expressiveness. As C++ evolved, it maintained compatibility with its predecessor, C, and inherited many of its design decisions.
+</p>
+
+
+
+<br>
+<br>
+
 
 | Type    | Description                                           |
 |---------|-------------------------------------------------------|
@@ -359,8 +388,28 @@ Change this tabel to contain the full list (also talk about signed and unsigned 
 | `bool`  | Used to represent a boolean value, which can be either `true` or `false` |
 
 
+
 <br>
 <br>
+
+
+<p>
+In addition to primitive types, programming languages often offer composite types or user-defined types, which are constructed by combining multiple primitive or composite types. Composite types encompass a variety of constructs such as arrays, structures, classes, or objects. They enable developers to create intricate data structures and represent entities with multiple properties or behaviors. While these concepts are currently quite complex, they will be explored in detail in subsequent sections.
+</p>
+
+<!-- ############################################# Separator - Bottom ############################################# -->
+
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Introduction</span>
+  <span>|</span>
+  <div class="right-div"></div>
+</div>
+
+<!-- ############################################# Separator - Bottom ############################################# -->
+
+
 
 ### Signed and unsigned
 
@@ -400,8 +449,30 @@ main(int argc, char* argv[])
 
 <br>
 
-<div align="justify">
+<div align="justify"> There is a difference between saying something is predefined with saying something is consisitent.
 &emsp;&emsp;&emsp;&emsp;While working in other languages such as Java, C#, Python, etc. you never have to worry about the size of your primitive types changing. If an int is considered to be 4 bytes, then it will stay consistent throughout other environments. However, in C/C++ world this is a different story. Languages such as C and C++ were made to be used with as many types of hardware as possible. Different types of hardware and CPUs have different types of architectures. Therefore, it is very challenging to accomodate the needs of them all. For this reason, at the time were these languages were envented and used no strict rules were enforced upon sizes and global best practices. If an int is 4 bytes in one system and environment, then it could be 6 or 8 bytes in others. The size of each primitive type dependends upon the standards that the chipset of each hardware and the operating system of that device enforces. Different operating systems and hardwares have different standards and opinions as what is the correct allocation to be made is. For these reasons the primitive types sizes can change. This can cause a lot of confusion and unindentended behaviour to occur. A program that you made for one device may not function as well or even at all for other devices.
 </div>
 
 You need to talk about the different primitive types in the primitive type section and provide code segments with examples.
+
+
+
+<div>
+Historically, a computer processor can process integer arithmetic quicker than 
+it can floating-point arithmetic. Thus, while a processor can add 1 million integer numbers in a given amount of time, the same processor may be able to 
+perform only 200,000 floating-point calculations during the same period. (Not 
+surprisingly, I couldn’t even get around to reading the first value.) 
+Calculation speed is becoming less of a problem as microprocessors increase 
+their capabilities. Most modern processors contain special calculation circuitry for performing floating-point calculations almost as fast as integer 
+calculations.
+</div>
+
+<br>
+
+<div align="justify">
+&emsp;&emsp;&emsp;&emsp;The amount of space in memory that the compiler needs to allocated to each data type is another important aspect of these primitive data types. As an example, while a `int` primitive type is meant to store whole numbers, but the smallest and largest numbers that it can hold are limited to the size it holds. A regular int in most environments (programming languages, operating systems, etc.) can usually have a size of 4 bytse or 32 bits. This allows the int to have a minimum of "-2147483648" and a maximum of "2147483647". But, what if we need store bigger values? What if we don't want to use as much space and only store smaller ranged values? The answer to these questions are the other similar data types that were created for these purposes. Each one of these major primitive data types have other sibling primitive data types that only vary in thier size capability. As an example, the int has other counter parts such as: `short` and `long`. The short has the ability to store a smaller range of numbers and uses less memeory. The long has the ability to store massive numbers at the cost of more memory usage. A similar situation exists for most other primitive data types. For a complete list of all availabl primitive data types and their sizes one must refer to the official documentation of that language and the underlying system. However, here is a list of most common types:
+</div>
+
+
+
+(also talk about signed and unsigned and explain how bits can be used to determine the size of a variable as well as sizeof method)
