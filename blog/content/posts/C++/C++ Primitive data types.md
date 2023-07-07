@@ -4,49 +4,271 @@ date: 2023-05-01T17:13:09-07:00
 draft: true
 ---
 
+<style>
+
+  .line-divider-top {
+	
+	display: flex;
+	align-items: center;
+	text-align: center;
+	
+	margin: 0px 0px 2.5rem 0px;
+  }
+
+  .line-divider-top .left-div {
+  
+	flex-grow: 1;
+	background: currentColor;
+	height: 1px;
+  }
+  
+  .line-divider-top .right-div {
+  
+	flex-grow: 1;
+	background: currentColor;
+	height: 1px;
+  }
+
+  .line-divider-top .middle {
+  
+	margin: 0px 0px;
+  }
+  
+  
+  
+  
+  .line-divider-bottom:not(:last-child) {
+	
+    display: flex;
+    align-items: center;
+    text-align: center;
+	
+	margin: 2.5rem 0 20rem 0;
+  }
+  
+  .line-divider-bottom:last-child {
+	
+    display: flex;
+    align-items: center;
+    text-align: center;
+	
+	margin: 2.5rem 0 0 0;
+  }
+
+  .line-divider-bottom .left-div {
+  
+	flex-grow: 1;
+	background: currentColor;
+    height: 1px;
+  }
+  
+  .line-divider-bottom .right-div {
+  
+	flex-grow: 1;
+	background: currentColor;
+    height: 1px;
+  }
+
+  .line-divider-bottom .middle {
+  
+	margin: 0px 20px;
+  }
+  
+  
+  p {
+  
+	text-indent: 3rem;
+	text-align: justify;
+  }
+  
+  ins {
+  
+	font-weight: 500;text-underline-offset: 5px;
+  }
+  
+  strong {
+	
+	font-weight: 700;
+  }
+  
+  
+  
+  .justified-list {
+    list-style-type: disc;
+  }
+
+  .justified-list li {
+    text-align: justify;
+  }
+  
+  
+  .justified-ordered-list {
+    list-style-type: decimal;
+  }
+
+  .justified-ordered-list li {
+    text-align: justify;
+  }
+
+</style>
+
+
+
+<br>
 <br>
 <br>
 
-### Intro
 
-<br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;I am sure that many programmers are familiar with the concept of a data type in a programming language. However, it suprises me as to how many people do not know the real reason behind the existance of data types in the first place. We will first try and explain the reason behind the existance of data types and then go in more depth about primitive data types specifically.
+### Introduction
+
+
+
+<!-- ############################################# Separator - Top ############################################# -->
+
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
 </div>
 
+<!-- ############################################# Separator - Top ############################################# -->
+
+
+
+<p>
+If I present a mathematical question, such as "What is 2x2=?" on a piece of paper to a human being, they will likely respond with the correct answer, which is 4 (or am I hallucinating?). Humans understand that numbers possess specific operations that can be performed on them. However, if I were to ask the question, "What is yellow multiplied by brown?" they would likely find it strange. This is because I am attempting to multiply two sets of characters, which is not a valid operation. We encounter these problems and find solutions in our daily lives without always realizing or caring about it.
+</p>
+
+
+
 <br>
-<br>
+
+
+
+<p>
+The situation differs when it comes to computers. While computers can execute instructions rapidly, they lack the same level of capability and flexibility as humans. We have previously discussed variables and how they allow us to direct the computer to store and manipulate information. Yet, we have not explored how we specify the type of information a variable can hold. Equally important is determining the set of actions that the computer can perform on that information. In this discussion, we will first delve into the reasons for the existence of data types and then explore primitive data types in greater detail in the C++ programming language.
+</p>
+
+
+
+<!-- ############################################# Separator - Bottom ############################################# -->
+
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Introduction</span>
+  <span>|</span>
+  <div class="right-div"></div>
+</div>
+
+<!-- ############################################# Separator - Bottom ############################################# -->
+
+
+
+
+
+
+
+
+
 
 ### Why have data types?
 
-<br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;Before we can discuss why we have so many different variations of data types, we need to define the meaning of a data type. <b>In computer programming, a data type is a classification that specifies the type of information that a variable or expression can hold and operate upon.</b> But, why do we need so many data types? Why not just have one type and call it "data"? The answer to these questions is hidden within the definition. The idea of having a single data type instead of multiple specific types may seem attractive because it simplifies the programming process. However, it is not practical for several reasons:
+
+<!-- ############################################# Separator - Top ############################################# -->
+
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
 </div>
 
+<!-- ############################################# Separator - Top ############################################# -->
+
+
+
+<p>
+In computer programming, a data type plays a crucial role as it defines and specifies the nature of information that a variable or expression can store and manipulate. However, one might question the reason of having numerous data types. Why not just have a single type called "data" that encompasses everything? At first glance, the idea of having a single data type appears appealing as it simplifies the programming task. Nevertheless, adopting a single type is impractical due to several reasons:
+</p>
+
+
+
+<br>
 <br>
 <br>
 
-<div align="justify">
-<code><b>1-</b></code>&emsp;&emsp;Defining a specific type helps the compiler to determine the set of operations that is possible to perform on that piece of information. As an example, imagin if our data is of type numeric, this will hint to the compiler that we are able to perform arithmatic operations such as addition, subtraction, division, and mulitplication on that data. This also helps the compiler to optimise the data for these operations to take place on it.
+
+
+<ul class="justified-list">
+<li><strong>Determine operations</strong></li>
+</ul>
+
+
+
+<p>
+By defining a specific data type, we enable the compiler to identify and understand the range of operations that can be applied to that particular piece of information. For instance, if we designate our data as numeric, the compiler recognizes that arithmetic operations like addition, subtraction, division, and multiplication can be performed on it. This knowledge hepls the compiler in optimizing the execution of these operations as well as ensuring that the data is appropriately tailored for such computations.
+</p>
+
+
+
+<br>
+
+
+
+<ul class="justified-list">
+<li><strong>Type safety</strong></li>
+</ul>
+
+
+
+<p>
+Employing a single data type for all values would introduce challenges in maintaining type safety within a program. Type safety is crucial as it safeguards against errors that may arise when data is utilized in unintended ways. Consider the scenario where our information is of type text. In this case, the acceptable set of operations differs from that of numerical data types. Attempting arithmetic operations, such as division, on text would be invalid and can be prevented by the compiler.
+</p>
+
+
+
+<br>
+
+
+
+<ul class="justified-list">
+<li><strong>Memory size</strong></li>
+</ul>
+
+
+
+<p>
+Utilizing a single data type would result in excessive memory usage, leading to inefficiency. For instance, if the requirement is to store small number values, it is more efficient to employ a data type that occupies less memory compared to a generic type capable of storing any data. This optimized memory allocation ensures efficient utilization of resources and prevents unnecessary memory consumption. 
+</p>
+
+
+
+<!-- ############################################# Separator - Bottom ############################################# -->
+
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Introduction</span>
+  <span>|</span>
+  <div class="right-div"></div>
 </div>
 
-<br>
+<!-- ############################################# Separator - Bottom ############################################# -->
 
-<div align="justify">
-<code><b>2-</b></code>&emsp;&emsp;In addition, using a single data type for all values would make it difficult to ensure type safety in a program. Type safety is important because it prevents errors from occurring in a program when data is used in an unintended way. For example, if our information is of type text, then the set of operations that we can perform on that data is different from numerical data types. We cannot perform arithmatic operations such as division on text. 
-</div>
 
-<br>
 
-<div align="justify">
-<code><b>3-</b></code>&emsp;&emsp;Last but not least, using a single data type would require a lot of memory, which would be inefficient. For example, if you only need to store small integer values, it is more efficient to use a data type that occupies less memory than an integer. 
-</div>
 
-<br>
-<br>
+
+
+
+
+
 
 ### About primitive types
 

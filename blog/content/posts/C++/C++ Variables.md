@@ -43,7 +43,7 @@ draft: true
     align-items: center;
     text-align: center;
 	
-	margin: 2.5rem 0 15rem 0;
+	margin: 2.5rem 0 20rem 0;
   }
   
   .line-divider-bottom:last-child {
@@ -100,12 +100,6 @@ draft: true
   .justified-list li {
     text-align: justify;
   }
-
-  .justified-list li::after {
-    content: "";
-    display: inline-block;
-    width: 100%;
-  }
   
   
   .justified-ordered-list {
@@ -116,26 +110,21 @@ draft: true
     text-align: justify;
   }
 
-  .justified-ordered-list li::after {
-    content: "";
-    display: inline-block;
-    width: 100%;
-  }
-
 </style>
 
 
 
 <br>
 <br>
+<br>
 
 
 
-### Intro
+### Introduction
 
 
 
-<!-- ##################### Separator - Top ##################### -->
+<!-- ############################################# Separator - Top ############################################# -->
 
 <div class="line-divider-top">
   <div class="left-div"></div>
@@ -145,12 +134,12 @@ draft: true
   <div class="right-div"></div>
 </div>
 
-<!-- ##################### Separator - Top ##################### -->
+<!-- ############################################# Separator - Top ############################################# -->
 
 
 
 <p>
-One of the most crucial capabilities of a computer lies in its potential to manipulate and process information, also known as data. Data plays a vital role in all computer operations and processes. However, in order for a computer to work with data, it requires a designated location to store that information. While disks can store large amounts of data, they suffer from sluggish read and write speeds, leading to significant delays. To fully utilize the potential of data, computers depend on a storage location called RAM (Random Access Memory).
+One of the most crucial capabilities of a computer lies in its potential to manipulate and process information, also known as data. Data plays a vital role in all computer operations and processes. However, in order for a computer to work with data, it requires a designated location to store that information. While disks can store large amounts of data, they suffer from sluggish read and write speeds, leading to significant delays. To fully utilize the potential of data, computers depend on a storage location called RAM, short for Random Access Memory.
 </p>
 
 
@@ -185,19 +174,17 @@ If a programmer needs to modify the contents of a specific cell in RAM, referrin
 
 
 
-<!-- ##################### Separator - Bottom ##################### -->
+<!-- ############################################# Separator - Bottom ############################################# -->
 
 <div class="line-divider-bottom">
   <div class="left-div"></div>
   <span>|</span>
-  <span class="middle">Intro</span>
+  <span class="middle">Introduction</span>
   <span>|</span>
   <div class="right-div"></div>
 </div>
 
-
-
-<!-- ##################### Separator - Bottom ##################### -->
+<!-- ############################################# Separator - Bottom ############################################# -->
 
 
 
@@ -342,7 +329,70 @@ Fortunately, even if we cannot predict the address of a variable, in C++, we can
 
 
 
-### Declaration & Initialization
+### Variable life stages
+
+
+
+<!-- ##################### Separator - Top ##################### -->
+
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
+</div>
+
+<!-- ##################### Separator - Top ##################### -->
+
+<p>
+In programming, a variable undergoes various stages throughout its lifespan. The first stage is the creation phase, where we inform the computer that we want to allocate and work with a specific piece of data. The second stage is utilization, during which we manipulate and utilize the variable's information to perform processing actions and generate output.
+</p>
+
+
+
+<br>
+
+
+
+<p>
+Eventually, every variable ultimately reaches the end of its lifespan. At this point, the variable is terminated by the operating system, and the memory allocated to that variable is freed for alternative uses. This usually happens when our programs complete their execution. A variable's life can also come to an end when it goes out of scope or when the program execution concludes. Once a variable goes out of scope, it becomes inaccessible, and the programming language may release its memory. We will explore scopes and their importance in later sections.
+</p>
+
+
+
+<br>
+
+
+
+<p>
+In the upcoming sections, we will explore the different stages associated with the creation phase of variables and dive deeper into how we can effectively work with them. The process of creating and utilizing a variable can be divided into two general steps of <strong>Declaration</strong> and <strong>Initialization</strong>. In programming, it is important to understand that declaration and initialization are two distinct concepts with different meanings and purposes. While these terms are sometimes used interchangeably, it is essential to recognize and comprehend their differences to ensure accurate communication and understanding within the programming community.
+</p>
+
+<!-- ##################### Separator - Bottom ##################### -->
+
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Variables</span>
+  <span>|</span>
+  <div class="right-div"></div>
+</div>
+
+
+
+<!-- ##################### Separator - Bottom ##################### -->
+
+
+
+
+
+
+
+
+
+
+### Declaration
 
 
 
@@ -361,29 +411,10 @@ Fortunately, even if we cannot predict the address of a variable, in C++, we can
 
 
 <p>
-Now that we have acquired a basic understanding of variables, let's discuss the different stages involved in creating and working with them. The process of creating and utilizing a variable can be divided into two general steps of <strong>Declaration</strong> and <strong>Initialization</strong>. In programming, it is important to understand that declaration and initialization are two distinct concepts with different meanings and purposes. While these terms are sometimes used interchangeably, it is essential to recognize and comprehend their differences to ensure accurate communication and understanding within the programming community.
-</p>
-
-
-
-<br>
-<br>
-<br>
-
-
-
-##### What is Declaration?
-
-
-
-<br>
-
-
-
-<p>
 Declaration is a fundamental process in programming whereby we, as programmers, inform the compiler about the existence and characteristics of a variable. When we declare a variable, we are essentially instructing the compiler to allocate a portion of memory for storing a specific piece of information or data that we intend to manipulate. The name we provide acts as a unique identifier for accessing and manipulating the variable throughout the program. Essentially, declaration is the only requirement for creating and interacting with variables. In C++, the syntax for declaring variables follows a general pattern:
 </p>
 
+You need to talk about the ability of declaring and initing multiple vars in a single line like this: int hello, good, same;
 
 
 <br>
@@ -431,17 +462,44 @@ In addition to the data type, we assign a label or name to the variable. In this
 
 
 
-<br>
-<br>
-<br>
+<!-- ##################### Separator - Bottom ##################### -->
+
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Variables</span>
+  <span>|</span>
+  <div class="right-div"></div>
+</div>
 
 
 
-##### What is Initialization?
+<!-- ##################### Separator - Bottom ##################### -->
 
 
 
-<br>
+
+
+
+
+
+
+
+### Initialization
+
+
+
+<!-- ##################### Separator - Top ##################### -->
+
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
+</div>
+
+<!-- ##################### Separator - Top ##################### -->
 
 
 
@@ -517,19 +575,141 @@ main(int argc, char* argv[])
 
 
 
-<br>
+<p>
+Initialization is crucial as it guarantees that variables possess a known value when they are initially utilized in the program. Certain programming languages, including C++, do not impose the requirement for variables to be initialized before usage. This can occasionally cause programmers to obtain undesirable habits. The drawbacks of neglecting to initialize variables in C++ can be substantial, potentially resulting in unexpected behavior or even security vulnerabilities within the program.
+</p>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;Now we can have a discussion as to why information is important. Initialization is important because it ensures that variables have a known value when they are first used in the program. Some languages, like C++, require variables to be initialized before they can be used, which helps enforce good programming practices. The side effects and drawbacks of not initializing variables in C++ can be significant, and can lead to unexpected behavior or even security vulnerabilities in the program. Here are some important notes:
+
+
+<!-- ##################### Separator - Bottom ##################### -->
+
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Variables</span>
+  <span>|</span>
+  <div class="right-div"></div>
 </div>
 
-<br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;If a variable is not initialized, it will contain whatever value happens to be in memory at that location. This can result in unpredictable behavior, as the program may assume the variable has a certain value when in fact it has a completely different value. This can lead to logic errors, crashes, or other unexpected behavior.
+
+<!-- ##################### Separator - Bottom ##################### -->
+
+
+
+
+
+
+
+
+
+
+### Problems with uninitialized variables
+
+
+
+
+<!-- ##################### Separator - Top ##################### -->
+
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
 </div>
 
+<!-- ##################### Separator - Top ##################### -->
+
+
+
+<p>
+Let's consider the scenario of attempting to print the contents of an uninitialized variable. In C++, if you try to print a variable that has been declared but not initialized, the behavior is undefined. This means that the result cannot be predicted and may vary depending on factors such as the compiler, optimization settings, and other variables. Let's explore a few potential scenarios that may arise:
+</p>
+
+
+
 <br>
+<br>
+<br>
+
+
+
+<ul class="justified-list">
+
+<!-- ##################### List element ##################### -->
+<li><strong>Garbage value</strong></li>
+
+</ul>
+
+
+
+<p>
+When a variable is not initialized, it will hold whatever value is present in the memory location where it resides. In certain cases, the uninitialized variable may contain a random value from that memory location. This value could be a remnant from a previous operation or simply an arbitrary value. This is commonly known as a garbage value. The presence of garbage values can give rise to logic errors, crashes, or other unforeseen behaviors.
+</p>
+
+
+
+<br>
+
+
+
+<ul class="justified-list">
+
+<!-- ##################### List element ##################### -->
+<li><strong>Compiler Warnings</strong></li>
+
+</ul>
+
+
+
+<p>
+In modern compilers, it is common for a warning to be generated when you try to utilize an uninitialized variable. This warning serves as a reminder that you are accessing a variable that may not hold a meaningful value. Despite this warning, the code will still compile and execute. However, it is crucial to note that using an uninitialized variable can result in program crashes or undefined behavior. The variable in question may trigger memory access violations, segmentation faults, or other runtime errors.
+</p>
+
+
+
+<br>
+
+
+
+<ul class="justified-list">
+
+<!-- ##################### List element ##################### -->
+<li><strong>Initialization by chance</strong></li>
+
+</ul>
+
+
+
+<p>
+In exceptional circumstances, an uninitialized variable may coincidentally possess a value that appears to be meaningful. This can occur on occasion since certain coding environments, compilers, and other factors have settings that facilitate automatic initialization. However, it is crucial to note that relying on this behavior is strongly discouraged. It is always best practice to explicitly initialize variables to ensure clarity for others reading yoru code and to avoid potential issues.
+</p>
+
+
+
+<br>
+
+
+
+<ul class="justified-list">
+
+<!-- ##################### List element ##################### -->
+<li><strong>Program Crash</strong></li>
+
+</ul>
+
+
+
+<p>
+In other cases, attempting to use an uninitialized variable can lead to program crashes or undefined behavior. The variable may cause memory access violations, segmentation faults, or other runtime errors that can terminate the program abruptly.
+</p>
+
+
+
+<br>
+
+
 
 ```C++
 #include <iostream>
@@ -562,76 +742,111 @@ int main(int argc, char* argv[])
 
 <br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;In the example above, we declare an integer variable called "input", but we do not initialize it with a value. Then, we prompt the user to enter a number using std::cin. Depending on whether the number is positive or negative, we perform different operations. The problem is that since the input variable is not initialized, its value is undefined, which can lead to unpredictable behavior. For example, if the user enters a non-integer value or a value that cannot be read by std::cin, the value of input will remain undefined, and the conditional statement will behave unpredictably. What is even worse is that if some other segment of our code later on decides to use the content of this variable, then it will not only not work, but it may also cause problems on the next run of the program, because the value from the previous operation will remain in this memory location.
-</div>
+<p>
+In the example above, we declare an integer variable called "input", but we do not initialize it with a value. Then, we prompt the user to enter a number using std::cin. Depending on whether the number is positive or negative, we perform different operations. The problem is that since the input variable is not initialized, its value is undefined, which can lead to unpredictable behavior. For example, if the user enters a non-integer value or a value that cannot be read by std::cin, the value of input will remain undefined, and the conditional statement will behave unpredictably. What is even worse is that if some other segment of our code later on decides to use the content of this variable, then it will not only not work, but it may also cause problems on the next run of the program, because the value from the previous operation will remain in this memory location.
+</p>
 
-<br>
-<br>
 
-###### Try printing without Initialization
 
-<br>
+<!-- ##################### Separator - Bottom ##################### -->
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;We might ask ourselves what happens if we attempt to print the content of a variable that has not been Initialized yet. In C++, if you try to print a variable that is only declared but not initialized, the behavior is undefined. This means that the outcome cannot be predicted and can vary depending on the compiler, the optimization settings, and other factors. Let's explore a few possible scenarios that could occur:
-</div>
-
-<br>
-
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;<ins style="font-weight: 700;text-decoration: none;">1-</ins> In some cases, the uninitialized variable may contain a random value from the memory location where it is stored. This value could be leftover from a previous operation or simply an arbitrary value. If you print such a variable, you will see whatever value happens to be stored in that memory location at the time. This is commonly refered to as <ins style="font-weight: 700;text-underline-offset: 5px;">"Garbage value"</ins>.
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Variables</span>
+  <span>|</span>
+  <div class="right-div"></div>
 </div>
 
 
-Compiler Warning: Many modern compilers will generate a warning when you attempt to use an uninitialized variable. The warning serves as a reminder that you are accessing a variable that may not have a meaningful value. However, the code will still compile and run.
 
-Initialization by Chance: In rare cases, an uninitialized variable may coincidentally have a value that appears to be meaningful. This can mislead you into thinking that the variable is correctly initialized. However, relying on this behavior is highly discouraged, as it is unreliable and can lead to bugs and unexpected behavior in your code.
+<!-- ##################### Separator - Bottom ##################### -->
 
-Program Crash or Unpredictable Behavior: In other cases, attempting to use an uninitialized variable can lead to program crashes or undefined behavior. The variable may cause memory access violations, segmentation faults, or other runtime errors that can terminate the program abruptly.
 
-<br>
-<br>
 
-###### A word about memory management
 
-<br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;Wheather a location in memory contains the value from previous programs/operations or is cleared and restored to the defualt value depends on a number of factors. Some of these factors include the way that the operating system handles the momery and the standards set in the programming language and its environmental IDEs/compilers. Some operating systems do not clear the value in the memory after the program/operation is finished as it will probably be overwritten by a later program/operation that uses the same memory location anyways. Some other opertaing systems enforce the need for memory to be cleared and defaulted after the end of each program/operation.
-</div>
 
-<br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;On the other hand, some programming languages may do the task of Initializating the variables automatically for the programmer. These languages and their respective complier environments insure that all variables are Initialized even if the progarmmer forgets to do it. However, all these conditions/rules may change at any time by the decisions of the maintainers of that programming language/complier environments and it is hard to keep up with all the latest updates. It is generally recommended to always do Initialization by ourselves and do not rely on external processes to do it for us.
-</div>
 
-<br>
-<br>
+
 
 ### Identifiers and naming conventions
 
-<br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;The names that we associate to our variables are commonly refered to as <b>identifiers</b>. This is because they ironically, identify what we are trynig to refer to. It almost acts like an identification (ID) that can be used to search and find and use a specific piece of information. When you create an identifier, you should try to make the name both meaningful and easy to remember. To make a name meaningful, you should use as many characters as you need, There are many different methods/patterns in computing science to name your identifiers. camel case, pascal case, snake case. While languages do not enforce any of these patterns it is a good idea to choose one and stick to it.
 
-C++ in particular is case-sensitive, you need to be careful when you create and use identifiers. If, for example, you define an identifier named subtotal, you can’t refer to it later as Subtotal. That’s a common coding error
+<!-- ##################### Separator - Top ##################### -->
+
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
 </div>
 
-<br>
-<br>
+<!-- ##################### Separator - Top ##################### -->
+
+
+
+<p>
+The names that we associate to our variables are commonly refered to as <b>identifiers</b>. This is because they ironically, identify what we are trynig to refer to. It almost acts like an identification (ID) that can be used to search and find and use a specific piece of information. When you create an identifier, you should try to make the name both meaningful and easy to remember. To make a name meaningful, you should use as many characters as you need, There are many different methods/patterns in computing science to name your identifiers. camel case, pascal case, snake case. While languages do not enforce any of these patterns it is a good idea to choose one and stick to it.
+
+C++ in particular is case-sensitive, you need to be careful when you create and use identifiers. If, for example, you define an identifier named subtotal, you can’t refer to it later as Subtotal. That’s a common coding error
+</p>
+
+
+
+<!-- ##################### Separator - Bottom ##################### -->
+
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Variables</span>
+  <span>|</span>
+  <div class="right-div"></div>
+</div>
+
+
+
+<!-- ##################### Separator - Bottom ##################### -->
+
+
+
+
+
+
+
+
+
 
 ### Assigning new values
 
-<br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;Initialization is not the only scenario in which we want to assign a value to a variable. Throughout the life time of a program it is very common to change the content of an existing variable multiple times. This is known as an <b>assignment statement</b>, in which the programmer attempts to tell the compiler to change the contents of a variable. This can be done in the following way:
+
+<!-- ##################### Separator - Top ##################### -->
+
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
 </div>
 
+<!-- ##################### Separator - Top ##################### -->
+
+
+
+<p>
+Initialization is not the only scenario in which we want to assign a value to a variable. Throughout the life time of a program it is very common to change the content of an existing variable multiple times. This is known as an <b>assignment statement</b>, in which the programmer attempts to tell the compiler to change the contents of a variable. This can be done in the following way:
+</p>
+
+
+
 <br>
+
+
 
 ```C++
 #include <iostream>
@@ -650,18 +865,39 @@ int main(int argc, char* argv[])
 }
 ```
 
-<br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;It is important to remember that in a assignment statement (except for when Initializating) we do not specify the data type of the variable again (as it would mean that we want to declare a variable with the same name again, which is not allowed). Instead we only use the identifier of the variable followed by a equal sign (=) and the value that we want it to contain.
-</div>
 
 <br>
+
+
+
+<p>
+It is important to remember that in a assignment statement (except for when Initializating) we do not specify the data type of the variable again (as it would mean that we want to declare a variable with the same name again, which is not allowed). Instead we only use the identifier of the variable followed by a equal sign (=) and the value that we want it to contain.
+</p>
+
+
+
+<br>
+
+
 
 ```C++
 [name of variable] = [value];
 ```
 
-
 You should research and see what naming conventions are used for variables.
 You need to talk about lvalues and rvalues.
+
+<!-- ##################### Separator - Bottom ##################### -->
+
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Variables</span>
+  <span>|</span>
+  <div class="right-div"></div>
+</div>
+
+
+
+<!-- ##################### Separator - Bottom ##################### -->
