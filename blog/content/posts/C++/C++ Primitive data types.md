@@ -88,7 +88,7 @@ draft: true
   
   strong {
 	
-	font-weight: 700;
+	font-weight: 900;
   }
   
   
@@ -411,47 +411,190 @@ In addition to primitive types, programming languages often offer composite type
 
 
 
-### Signed and unsigned
 
-<br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;Every numerical primitive type has the capability to store and manipulate both positive and negative numbers. In other programming languages, the programmer has less to no control over if a primitive numercial type can store both negative and positive numbers or weather it should only contain positive numbers. In C++ this is a different story. C++ gives the programmer the ability to decide weather they want to have the ability to store both negative and positive numbers (signed data type) or just positive numbers (unsigned data type). Here is an example of how one can do this in C++:
+
+
+
+
+
+### Bits and Bytes
+
+
+
+<!-- ############################################# Separator - Top ############################################# -->
+
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
 </div>
 
+<!-- ############################################# Separator - Top ############################################# -->
+
+
+
+<p>
+All though this section is typically ignored and not covered by most tutorials, I feel the need to explain these concepts as they can help us understand later parts. Remmeber that it is the change in voltage that gives it a meaninng not the individual by themselves. if you look at a character it is not exactly useful as it has no meannig, it is rather the combination of letters together that give the text some meaning.
+</p>
+
+
+
 <br>
+<br>
+
+
 
 ```C++
 main(int argc, char* argv[])
 {
-	signed int number1 = -100;
+	signed   int number1 = -100;
 	unsigned int number2 = 100;
 	
-	std::cout << "This is the signed number: " << "number1 = " << number1 << "/n";
+	std::cout << "This is the signed number: "   << "number1 = " << number1 << "/n";
 	std::cout << "This is the unsigned number: " << "number2 = " << number2 << std::endl;
 	
-	std::cin; // Just to make sure the command prompt does not close immediately in some IDEs.
+	std::cin; // To insure that the command prompt does not close immediately in some IDEs.
 	
 	return (0);
 }
 ```
 
+
+
+<br>
 <br>
 
-<div align="justify">
-&emsp;&emsp;&emsp;&emsp;Due to the way in which a signed number is saved in memory, the maximum number that we are able to store in a unsigned number increases, because we no longer need to accomodate negative numbers and therfore, we can use those bits to hold larger positive numbers.
+
+
+<p>
+Due to the way in which a signed number is saved in memory, the maximum number that we are able to store in a unsigned number increases, because we no longer need to accomodate negative numbers and therfore, we can use those bits to hold larger positive numbers.
+</p>
+
+
+
+<!-- ############################################# Separator - Bottom ############################################# -->
+
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Introduction</span>
+  <span>|</span>
+  <div class="right-div"></div>
 </div>
 
+<!-- ############################################# Separator - Bottom ############################################# -->
+
+
+
+
+
+
+
+
+
+
+### Signed and unsigned
+
+
+
+<!-- ############################################# Separator - Top ############################################# -->
+
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
+</div>
+
+<!-- ############################################# Separator - Top ############################################# -->
+
+
+
+<p>
+Most of the fundamental numerical primitive types have the ability to store and manipulate both positive and negative numbers. In contrast to other programming languages, where the programmer may have limited or no control over whether a primitive numerical type can accommodate negative and positive numbers or only positive numbers, C++ offers a different approach. C++ provides the programmer with the ability to decide whether to store both negative and positive numbers, referred to as <strong>signed</strong> data types, or solely positive numbers, known as <strong>unsigned</strong> data types. Here's an example of how this can be achieved in C++:
+</p>
+
+
+
 <br>
 <br>
+
+
+
+```C++
+main(int argc, char* argv[])
+{
+	signed   int number1 = -100;
+	unsigned int number2 = 100;
+	
+	std::cout << "This is the signed number: "   << "number1 = " << number1 << "/n";
+	std::cout << "This is the unsigned number: " << "number2 = " << number2 << std::endl;
+	
+	std::cin; // To insure that the command prompt does not close immediately in some IDEs.
+	
+	return (0);
+}
+```
+
+
+
+<br>
+<br>
+
+
+
+<p>
+Due to the way in which a signed number is saved in memory, the maximum number that we are able to store in a unsigned number increases, because we no longer need to accomodate negative numbers and therfore, we can use those bits to hold larger positive numbers.
+</p>
+
+
+
+<!-- ############################################# Separator - Bottom ############################################# -->
+
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Introduction</span>
+  <span>|</span>
+  <div class="right-div"></div>
+</div>
+
+<!-- ############################################# Separator - Bottom ############################################# -->
+
+
+
+
+
+
+
+
+
 
 ### Primitive sizes are not consistent!
 
-<br>
 
-<div align="justify"> There is a difference between saying something is predefined with saying something is consisitent.
-&emsp;&emsp;&emsp;&emsp;While working in other languages such as Java, C#, Python, etc. you never have to worry about the size of your primitive types changing. If an int is considered to be 4 bytes, then it will stay consistent throughout other environments. However, in C/C++ world this is a different story. Languages such as C and C++ were made to be used with as many types of hardware as possible. Different types of hardware and CPUs have different types of architectures. Therefore, it is very challenging to accomodate the needs of them all. For this reason, at the time were these languages were envented and used no strict rules were enforced upon sizes and global best practices. If an int is 4 bytes in one system and environment, then it could be 6 or 8 bytes in others. The size of each primitive type dependends upon the standards that the chipset of each hardware and the operating system of that device enforces. Different operating systems and hardwares have different standards and opinions as what is the correct allocation to be made is. For these reasons the primitive types sizes can change. This can cause a lot of confusion and unindentended behaviour to occur. A program that you made for one device may not function as well or even at all for other devices.
+
+<!-- ############################################# Separator - Top ############################################# -->
+
+<div class="line-divider-top">
+  <div class="left-div"></div>
+  <span></span>
+  <span class="middle"></span>
+  <span></span>
+  <div class="right-div"></div>
 </div>
+
+<!-- ############################################# Separator - Top ############################################# -->
+
+
+
+<p> There is a difference between saying something is predefined with saying something is consisitent. predefined means that something is known and set from before hand. Consisitent means that there are no changes when switching among different conditions and variations.
+&emsp;&emsp;&emsp;&emsp;While working in other languages such as Java, C#, Python, etc. you never have to worry about the size of your primitive types changing. If an int is considered to be 4 bytes, then it will stay consistent throughout other environments. However, in C/C++ world this is a different story. Languages such as C and C++ were made to be used with as many types of hardware as possible. Different types of hardware and CPUs have different types of architectures. Therefore, it is very challenging to accomodate the needs of them all. For this reason, at the time were these languages were envented and used no strict rules were enforced upon sizes and global best practices. If an int is 4 bytes in one system and environment, then it could be 6 or 8 bytes in others. The size of each primitive type dependends upon the standards that the chipset of each hardware and the operating system of that device enforces. Different operating systems and hardwares have different standards and opinions as what is the correct allocation to be made is. For these reasons the primitive types sizes can change. This can cause a lot of confusion and unindentended behaviour to occur. A program that you made for one device may not function as well or even at all for other devices.
+</p>
 
 You need to talk about the different primitive types in the primitive type section and provide code segments with examples.
 
@@ -476,3 +619,17 @@ calculations.
 
 
 (also talk about signed and unsigned and explain how bits can be used to determine the size of a variable as well as sizeof method)
+
+
+
+<!-- ############################################# Separator - Bottom ############################################# -->
+
+<div class="line-divider-bottom">
+  <div class="left-div"></div>
+  <span>|</span>
+  <span class="middle">Introduction</span>
+  <span>|</span>
+  <div class="right-div"></div>
+</div>
+
+<!-- ############################################# Separator - Bottom ############################################# -->
