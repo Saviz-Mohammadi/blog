@@ -63,6 +63,154 @@ The situation differs when it comes to computers. While computers can execute in
 
 
 
+### Bytes & Bits
+
+
+
+<!-- ############################################# Separator - Top ############################################# -->
+
+<hr>
+
+<br>
+
+<!-- ############################################# Separator - Top ############################################# -->
+
+
+
+<p>
+While this section is often overlooked and not covered in most tutorials, it is essential to explain these concepts as they can improve our understanding of upcoming topics. Until now, we obtained that variables allow us to direct the computer to allocate memory space for manipulating data. However, gaining insight into how the computer stores, manages, and understands information will greatly aid our understanding of the reason behind having data types. 
+</p>
+
+
+
+<br>
+
+
+<code><h3>SCENARIO:</h3></code>
+
+<p>
+Let's take a moment to envision a game scenario. In this game, two individuals are involved. The first person, referred to as person A, is locked in a room equipped with a switch. This room is completely isolated, making it impossible to hear any sounds from outside, and there are no windows for someone outside the room to observe person A. Person A holds a piece of paper displaying a specific color, let's say yellow, in this case. In addition, there are several LEDs located in the room each representing a unique color when switched on.
+</p>
+
+
+
+<br>
+
+
+
+<p>
+The second person, known as person B, is situated in another room with a light bulb, which can be controlled by the switches accessible to person A. Furthermore, person B has a set of switches at their disposal, which allows them to activate the LEDs located in person A's room. The objective of the game is for both individuals to establish a means of communication, enabling person B to determine the color displayed on the paper held by person A. What makes this interesting, is that the sole element capable of facilitating communication between the two participants is a light bulb, which can exist in only two states at any given time: on or off.
+</p>
+
+
+
+<br>
+
+
+<code><h3>SOLUTION:</h3></code>
+
+<p>
+Now, how can we establish communication with the other person? Since a light bulb can only be in two states, either on or off, it can be quite challenging to devise a solution for communication. One possible approach is to associate each of these two states with a potential answer. For instance, we can determine that turning the light on signifies "yes," while switching it off indicates "no." This is a step in the right direction! With this technique, person B can toggle each individual LED on and off, and person A can confirm whether the LED that was toggled corresponds to the correct color by switching the light bulb on or off accordingly.
+</p>
+
+
+
+<br>
+
+
+
+<p>
+While the previous solution is effective, it poses challenges when dealing with a large number of LEDs, like 100, each representing a different color. It would become tedious to respond with a simple "yes" or "no" for each LED being turned on or off. In such a scenario, an alternative solution could involve implementing a deciphering system where consecutive toggles of the light bulb correspond to specific words or letters. For example, we could create a code where quickly turning the light bulb on and off six times indicates the letter "p." By using this method, we can generate codes for all letters and communicate the name of the color by applying the appropriate code. We can even have a combiniation of long and short flicks.
+</p>
+
+
+
+<br>
+
+
+
+<p>
+What we have effectively done at this stage is commonly refered to as Morse code. Morse code is a system of communication where each letter of the alphabet, as well as numbers and some special characters, is represented by a unique sequence of short and long signals. A short signal is called a "dot," and a long signal is called a "dash." The dots and dashes are combined to form the codes for different characters. By combining the characters achieved from Morse code we can create meaningful sentences. Of course you are not required to memorize any of this, but it will help understand the concept of how computers handle information.
+</p>
+
+<br>
+Now that we have an understanding of how we can approach communication with an entity that only has two states, let's use this information to understand how computer systems work.
+
+<br>
+<br>
+We can imagine the on state of a light as saying yes. and teh off state as no. THis way we have the ability to to answer a lot of questions such as am I on teh right track or not. But, the issue with this approach is that it is very tidious as we have to ask a lot of questions and break them down into yes or no qusetions. If we want to do anything slightly more complicated we probably need to come up with combinitions that can represent more complex answers. Me and my team mate can agree on a set of rules and contracts that we can use to create more complex answers and questions, such as turn on and off quickly 2 times to say "what does that mean". or one long on and off to say "let me see".
+
+
+
+The binary language is limited in teh number of resources (digits) it can provide to us for representing different entities. You can use as many zeros and ones as you like the only qeustion is at what cost?
+
+
+THis type of communication is actually refered to as Morse code and was used in the military for communication.
+
+if you look at a character it is not exactly useful as it has no meannig, it is rather the combination of letters together that give the text some meaning.
+
+
+How does this translate into the computer language? Computers are made of millions of chipsets called "transistors" that can have two different voltage values at a time. This can be either 0.5 or 1. each of these respond to the on and off state. A common source of confusion when it comes to this topic is that most peopel imagine that a computer has a voltage of 0 when it is off, but this is not true after all a computer needs a current and electrcity to function. Saying a voltage of zero means that the computer is literally off! If each of these states represent a yes and no, then the change of these states over time can represent a more complex message.
+
+Another question that we get asskeedd all teh time is why binary? why not base 10 or something else? it is because of the fact that binary system and the two states on and off are very compatible with a chipset that can be only switched on and off as that is the nature of electronic devices. A voltage can only be flowing or not flowing in a wire.
+
+The word binary actually means being composed of 2 things (like a switch)
+
+
+One of the reasons as to why hexidecimal is so important when dealing with computers and why they are used to represent memory instead of binary is because they are much easier to work with in comparison to long and huge binary numbers.
+
+
+Now let's talk about how to interact with information that is not a numebr such as text.
+</p>
+
+
+
+<br>
+<br>
+
+
+
+```C++
+main(int argc, char* argv[])
+{
+	signed   int number1 = -100;
+	unsigned int number2 = 100;
+	
+	std::cout << "This is the signed number: "   << "number1 = " << number1 << "/n";
+	std::cout << "This is the unsigned number: " << "number2 = " << number2 << std::endl;
+	
+	std::cin; // To insure that the command prompt does not close immediately in some IDEs.
+	
+	return (0);
+}
+```
+
+
+
+<br>
+<br>
+
+
+
+<p>
+Due to the way in which a signed number is saved in memory, the maximum number that we are able to store in a unsigned number increases, because we no longer need to accomodate negative numbers and therfore, we can use those bits to hold larger positive numbers.
+</p>
+
+
+
+<!-- ############################################# Separator - Bottom ############################################# -->
+
+<div class="line-divider-bottom">
+  <hr class="left-line">
+  <span>|</span>
+  <span class="middle">Bytes & Bits</span>
+  <span>|</span>
+  <hr class="right-line">
+</div>
+
+<!-- ############################################# Separator - Bottom ############################################# -->
+
+
 ### Why have data types?
 
 
@@ -306,100 +454,7 @@ In addition to primitive types, programming languages often offer composite type
 
 
 
-### Bits and Bytes
 
-
-
-<!-- ############################################# Separator - Top ############################################# -->
-
-<div class="line-divider-top">
-  <div class="left-div"></div>
-  <span></span>
-  <span class="middle"></span>
-  <span></span>
-  <div class="right-div"></div>
-</div>
-
-<!-- ############################################# Separator - Top ############################################# -->
-
-
-
-<p>
-All though this section is typically ignored and not covered by most tutorials, I feel the need to explain these concepts as they can help us understand later parts. Remmeber that it is the change in voltage that gives it a meaninng not the individual by themselves. Let's imagine for a moment that we are trapped in a room and the only way out is by trying to communicate to a friend that is in a room next door. The rooms are completely isolated, meaning that sound cannot go through them, what is worse is that the rooms have no windows. So, there is no way for the person to hear or see us. However, there does appear to be a light bolb in the room and the other person has the switch for it (I know, very wierd scenario). So, how do we establish communication to the other person? Since a light bolb can be at only two states at a time, which is either on or off, it can be quite tricky to come up with a solution to communicate. One might say let's filck the light on and off and create codes between each other. If I switch it on and off very quickly two times that would mean a yes, and if I do it just once that means a no. Now we are getting somewhere. Yay! I got out.
-
-You can imagine the room problem as a game of 2 players.
-
-We can imagine the on state of a light as saying yes. and teh off state as no. THis way we have the ability to to answer a lot of questions such as am I on teh right track or not. But, the issue with this approach is that it is very tidious as we have to ask a lot of questions and break them down into yes or no qusetions. If we want to do anything slightly more complicated we probably need to come up with combinitions that can represent more complex answers. Me and my team mate can agree on a set of rules and contracts that we can use to create more complex answers and questions, such as turn on and off quickly 2 times to say "what does that mean". or one long on and off to say "let me see".
-
-
-
-The binary language is limited in teh number of resources (digits) it can provide to us for representing different entities. You can use as many zeros and ones as you like the only qeustion is at what cost?
-
-
-THis type of communication is actually refered to as Morse code and was used in the military for communication.
-
-if you look at a character it is not exactly useful as it has no meannig, it is rather the combination of letters together that give the text some meaning.
-
-
-How does this translate into the computer language? Computers are made of millions of chipsets called "transistors" that can have two different voltage values at a time. This can be either 0.5 or 1. each of these respond to the on and off state. A common source of confusion when it comes to this topic is that most peopel imagine that a computer has a voltage of 0 when it is off, but this is not true after all a computer needs a current and electrcity to function. Saying a voltage of zero means that the computer is literally off! If each of these states represent a yes and no, then the change of these states over time can represent a more complex message.
-
-Another question that we get asskeedd all teh time is why binary? why not base 10 or something else? it is because of the fact that binary system and the two states on and off are very compatible with a chipset that can be only switched on and off as that is the nature of electronic devices. A voltage can only be flowing or not flowing in a wire.
-
-The word binary actually means being composed of 2 things (like a switch)
-
-
-One of the reasons as to why hexidecimal is so important when dealing with computers and why they are used to represent memory instead of binary is because they are much easier to work with in comparison to long and huge binary numbers.
-
-
-Now let's talk about how to interact with information that is not a numebr such as text.
-</p>
-
-
-
-<br>
-<br>
-
-
-
-```C++
-main(int argc, char* argv[])
-{
-	signed   int number1 = -100;
-	unsigned int number2 = 100;
-	
-	std::cout << "This is the signed number: "   << "number1 = " << number1 << "/n";
-	std::cout << "This is the unsigned number: " << "number2 = " << number2 << std::endl;
-	
-	std::cin; // To insure that the command prompt does not close immediately in some IDEs.
-	
-	return (0);
-}
-```
-
-
-
-<br>
-<br>
-
-
-
-<p>
-Due to the way in which a signed number is saved in memory, the maximum number that we are able to store in a unsigned number increases, because we no longer need to accomodate negative numbers and therfore, we can use those bits to hold larger positive numbers.
-</p>
-
-
-
-<!-- ############################################# Separator - Bottom ############################################# -->
-
-<div class="line-divider-bottom">
-  <div class="left-div"></div>
-  <span>|</span>
-  <span class="middle">Introduction</span>
-  <span>|</span>
-  <div class="right-div"></div>
-</div>
-
-<!-- ############################################# Separator - Bottom ############################################# -->
 
 
 
