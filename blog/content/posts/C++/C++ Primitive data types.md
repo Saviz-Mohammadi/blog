@@ -133,9 +133,54 @@ While the previous solution is effective, it poses challenges when dealing with 
 What we have effectively done at this stage is commonly refered to as Morse code. Morse code is a system of communication where each letter of the alphabet, as well as numbers and some special characters, is represented by a unique sequence of short and long signals. A short signal is called a "dot," and a long signal is called a "dash." The dots and dashes are combined to form the codes for different characters. By combining the characters achieved from Morse code we can create meaningful sentences. Of course you are not required to memorize any of this, but it will help understand the concept of how computers handle information.
 </p>
 
-<br>
-Now that we have an understanding of how we can approach communication with an entity that only has two states, let's use this information to understand how computer systems work.
 
+
+<br>
+
+
+<code><h3>COMPUTERS:</h3></code>
+
+<p>
+Now that we have a grasp of how to approach communication with an entity that has only two states, let's apply this understanding to understand how computer systems function. A computer comprises millions, if not billions, of components called transistors. Transistors, short for "transfer resistance," are used to regulate the flow of voltage within an electronic device. They are responsible for generating the binary 0s and 1s (bits) that computers utilize for communication and Boolean logic. In small quantities, transistors function as basic electronic switches. However, when employed in large numbers, they form microprocessors. 
+</p>
+
+
+
+<br>
+
+
+
+<p>
+The reason computers use a binary number system is due to the nature of these components, or transistors, that constitute the computer. A transistor can only possess two states at any given time: 0 for false and 1 for true. However, it is important to clarify a source of confusion within the industry. While we often say that 0 represents false and 1 represents true, it does not necessarily mean that 0 indicates the absence of voltage entirely. In reality, the value of 0 refers to a range of voltages significantly lower than the range for 1. For instance, if a voltage amount of +1.0v represents 1, then +0.5v could represent 0.
+</p>
+
+
+
+<br>
+
+
+
+<code><h3>INFORMATION IN BINARY:</h3></code>
+
+<p>
+Similar to human language, where individual letters hold limited significance, binary becomes truly valuable when we combine multiple sets of 0s and 1s. The individual 0s and 1s are more than enough to accomodate conditional values where we need to decide weather something is true and should happen or not and should not happen (boolean). And numbers in the decimal base format (97, 122, ...) can also be easilly converted to the binary system. However, what about other types of information like characters?
+</p>
+
+
+
+<br>
+
+
+
+<p>
+Let's ask a fundemental question, in the English alhpabet there are 26 characters. If we were to use the same strategy of assigning as many combiniations of bits to represent these characters, we would end up needing at least 5 bits since two to the power of 5 gives us 32 possibiliets. However, what about the uppercaes possibilties? Or even numbers (1, 2, 3, ..., 9), punctuation marks, control characters, and some special characters? We would need a lot more bits to accomodate all of them. The exact number of bits required is 8 which allows us to do a combination of 256 characters. This standard is commonly known as the ASCII table (American Standard Code for Information Interchange) where each character in the table is given a unique number that allows us to identify the character. This special number is associated and converted into binary  for the computer to understand and represent.
+</p>
+
+
+
+<p>
+At a fundemental level, this is how the computer manages to handle different types of information, by either directly converting their number system and converting it to binary or associating a certain numberr
+</p>
 <br>
 <br>
 We can imagine the on state of a light as saying yes. and teh off state as no. THis way we have the ability to to answer a lot of questions such as am I on teh right track or not. But, the issue with this approach is that it is very tidious as we have to ask a lot of questions and break them down into yes or no qusetions. If we want to do anything slightly more complicated we probably need to come up with combinitions that can represent more complex answers. Me and my team mate can agree on a set of rules and contracts that we can use to create more complex answers and questions, such as turn on and off quickly 2 times to say "what does that mean". or one long on and off to say "let me see".
